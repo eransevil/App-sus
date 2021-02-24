@@ -1,14 +1,7 @@
-@import "/css/apps/email/pages/email-app.cmp.css";
-
-/* Using a string */
-
-@import "/css/apps/email/cmps/email-list.cmp.css";
-
-/* Using a string */
-
-@import "/css/apps/email/cmps/email-preview.cmp.css";
-
-/* Using a string */
+@import "/css/apps/email/pages/email-app.cmp.css"; 
+@import "/css/apps/email/cmps/email-list.cmp.css"; 
+@import "/css/apps/email/cmps/email-preview.cmp.css"; 
+/* @import "/css/apps/email/cmps/email-preview.cmp.css";  */
 
 @import '/css/basic/fonts.css';
 @import '/css/basic/base.css';
@@ -71,7 +64,7 @@ p {
 html {
     line-height: 1.5;
     font-size: 1.5rem;
-    background-color: rgb(243 239 214);
+    background-color: rgb(238, 235, 235)
 }
 
 li {
