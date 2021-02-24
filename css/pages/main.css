@@ -1,0 +1,34 @@
+/* header */
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+html {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    background-color: rgb(243 239 214);
+}
+
+.main-app {
+    margin: 0;
+    height: 80vh;
+}
+
+.app-footer {
+    height: 10vh;
+}
+
+.app-header {
+    height: 10vh;
+}
