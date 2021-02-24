@@ -2,7 +2,6 @@
 .email-list{
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
 
 }
 
@@ -12,6 +11,19 @@
     color:black;
 }
 
-.modalOn{
-    display: none;
+
+.delete-btn{
+    cursor: pointer;
+    background-color: rgb(228, 226, 226);
+    border:1px solid rgb(222, 228, 228);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    
+}
+
+
+.delete-btn:hover{
+    
 }

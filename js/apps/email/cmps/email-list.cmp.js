@@ -6,7 +6,7 @@ export default {
     <ul class="email-list">
     <li v-for="email in emails" :key="email.id" class="email-preview-container">
     <router-link  class="open-mail" :to="'/email/'+email.id">  <email-preview @starredToggle="toggleStar"  :email="email"/>  </router-link>
-     <div @click="showDeleteModal(email.id)"> ✖ </div>
+     <div @click="showDeleteModal(email.id)" class="delete-btn"> ✖ </div>
    
     </li>
     </ul>
@@ -14,7 +14,7 @@ export default {
   methods: {
     toggleStar(emailId) {
       console.log(emailId)
-      this.$emit('starredToggle', starId);
+      this.$emit('starredToggle', emailId);
     },
     showDeleteModal(emailId) {
       Swal.fire({
