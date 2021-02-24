@@ -1,12 +1,45 @@
+import keepList from '../cmps/keep-list.cmp.js'
+import { keepService } from '../services/keep.service.js'
+
 export default {
+    name: "keep-app",
     template: `
-    <section class= "book-app">
-        <!-- <book-filter @filtered="setFilter" />
-        <book-add @bookAdiding="loadBooks" />
-        <book-list :books="booksToShow" @remove="removeBook"/>    -->
-        <h1>ho</h1>
+    <section class= "keep-app main-app">
+       
+        <keep-list />   
+
 
     </section>
 
     `,
+    data() {
+        return {
+            keeps: null
+                // filterBy: null
+        }
+    },
+    methods: {
+        loadKeeps() {
+            keepService.query()
+                .then(keeps => this.keeps = keeps)
+        },
+        removeKeep(keepId) {
+            keepService.remove(keepId)
+                .then(this.loadKeeps)
+        },
+
+
+    },
+    computed: {
+
+
+    },
+    created() {
+        this.loadKeeps();
+    },
+    components: {
+        // bookFilter,
+        keepList,
+        // bookAdd
+    }
 }
