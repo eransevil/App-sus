@@ -6,7 +6,7 @@ export default {
     template: `
     <section class= "main-app">
         <h1 class="">emails</h1>
-    <email-list v-if="!selectedEmail" :emails="EmailToShow" @selected="selectEmail"></email-list>
+    <email-list v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail"></email-list>
 
 
     </section>
@@ -22,9 +22,10 @@ export default {
   methods: {
     loadEmails() {
       emailService.query().then((emails) => (this.emails = emails));
-      
     },
     selectEmail(email) {
+
+       console.log(email)
         this.selectedEmail = email;
       },
   },

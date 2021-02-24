@@ -1,13 +1,12 @@
 import { emailService } from '../services/email.service.js';
 
-
 export default {
-    name:emailDetails,
-    template: `
+  name: 'emailDetails',
+  template: `
       <section v-if="email" class="mail-details-container">
       <router-link class="x-btn" :to="'/email/'"> ✖</router-link>
       <div class="email-details"> 
-      <div class="email-info"> 
+      <div class="email-info"> =
         <p class="email-subject"> {{email.subject}}</p>
         <p  class="email-subtitle-container"> <span class="email.sender"> {{email.sender}}</span> <span class="email-date"> {{email.sentAt}} </span> </p>
         <p class="email-body" >{{email.body}}</p>
@@ -16,13 +15,34 @@ export default {
           
       </section>
       `,
-     
+
   data() {
     return {
-       email: null
+      email: null,
+      nextEmailId: null,
+      previousEmailId: null,
     };
-
-}
-  
-}
-
+  },
+  methods: {
+    loadEmail() {
+      const id = this.$route.params.id;
+      debugger;
+      console.log(id)
+      emailService.getById(id).then((email) => {
+        this.email = email;
+        //  this.nextBookId = bookService.getNextBookId(book.id)
+        //  this.PreviousBookId = bookService.getPreviousBookId(book.id)
+      });
+    },
+  },
+  created() {
+    console.log('erwrwef')
+    this.loadEmail();
+  },
+  watch: {
+    '$route.params.id'(id) {
+      console.log(id)
+      this.loadEmail();
+    },
+  },
+};

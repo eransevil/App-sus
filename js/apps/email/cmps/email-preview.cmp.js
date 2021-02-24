@@ -10,9 +10,7 @@ export default {
     </section>
     `,
   methods: {
-    formatted_date() {
-      
-    },
+    
   },
   computed: {
     isRead() {

@@ -5,6 +5,7 @@ const EMAILS_KEY = 'emails';
 
 const gEmailsDB = [
   {
+    id: utilService.makeId(),
     subject: 'dear friend',
     sender: 'Eran Sevil',
     body: 'please call me urgently',
@@ -14,6 +15,7 @@ const gEmailsDB = [
     type: 'sent',
   },
   {
+    id: utilService.makeId(),
     subject: 'Your receipt for Avocode',
     sender: 'Avocode',
     body:
@@ -24,6 +26,7 @@ const gEmailsDB = [
     type: 'inbox',
   },
   {
+    id: utilService.makeId(),
     subject: 'Your Amazon order',
     sender: 'Amazon',
     body:
@@ -34,6 +37,7 @@ const gEmailsDB = [
     type: 'inbox',
   },
   {
+    id: utilService.makeId(),
     subject: 'Your McAfee Monthly for February',
     sender: 'McAfee',
     body:
@@ -44,6 +48,7 @@ const gEmailsDB = [
     type: 'inbox',
   },
   {
+    id: utilService.makeId(),
     subject: 'Don’t miss out, eran!',
     sender: 'dany ',
     body:
@@ -54,6 +59,7 @@ const gEmailsDB = [
     type: 'sent',
   },
   {
+    id: utilService.makeId(),
     subject: 'Publicly Accessible Google API Key ',
     sender: 'google-cloud',
     body:
