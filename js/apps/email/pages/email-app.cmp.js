@@ -6,7 +6,7 @@ export default {
     template: `
     <section class= "main-app">
         <h1 class="">emails</h1>
-    <email-list v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail"></email-list>
+    <email-list @starredToggle="toggleStar" v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail"></email-list>
 
 
     </section>
@@ -28,6 +28,13 @@ export default {
        console.log(email)
         this.selectedEmail = email;
       },
+      toggleStar(starId){
+        emailService.getById(starId)
+          .then((email)=>{
+            email.starred = !email.starred;
+            emailService.update(email )
+          })
+      }
   },
   computed:{
     EmailToShow() {

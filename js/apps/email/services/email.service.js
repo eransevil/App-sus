@@ -44,7 +44,7 @@ const gEmailsDB = [
       'Just a quick reminder that we’re always here and ready to help with 24/7 support. Contact us for free basic support via chat',
     isRead: false,
     sentAt:new Date(),
-    starred: false,
+    starred: true,
     type: 'inbox',
   },
   {
@@ -66,7 +66,7 @@ const gEmailsDB = [
       'We have detected a publicly accessible Google API key associated with the following Google Cloud Platform project',
     isRead: true,
     sentAt: new Date(),
-    starred: false,
+    starred: true,
     type: 'inbox',
   },
 ];
@@ -87,6 +87,7 @@ export const emailService = {
   save,
   getById,
   getNextEmailId,
+  update
 };
 
 function getNextEmailId(emailId) {
@@ -111,6 +112,12 @@ function query() {
 function save(email) {
   return storageService.post(EMAILS_KEY, email);
 }
+
+function update(newEmail) {
+  return storageService.put(EMAILS_KEY, newEmail);
+}
+
+
 
 function getById(id) {
   return storageService.get(EMAILS_KEY, id);

@@ -1,6 +1,62 @@
 
-.email-preview{
+
+
+.email-preview-container {
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    align-items: center;
+    border:1px solid rgb(222, 228, 228)
+    
+}
+
+.email-pre-container{
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    
+}
+
+
+.email-sender{
+    min-width: 100px
+}
+.email-subject{
+    min-width: 200px;
+    margin-left: 20px;
+    
+    
+}
+
+.body-introduction{
+    font-size: 13px;
+    font-weight: normal;
+    font-family: RobotoItalic;
+    min-width: 400px;
+
+
+}
+
+.email-date{
+    width: 100%;
+    font-family:RobotoItalic ;
+    font-size: 12px;
+    
+}
+
+.isRead{
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.Unread{
+    background-color: rgb(228, 226, 226);
+    font-weight: bold;
+    
+}
+
+.star-img{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
 }

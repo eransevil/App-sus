@@ -1,4 +1,5 @@
 import { emailService } from '../services/email.service.js';
+import {eventBus} from '../services/event-bus.service.js';
 
 export default {
   name: 'emailDetails',
@@ -26,17 +27,17 @@ export default {
   methods: {
     loadEmail() {
       const id = this.$route.params.id;
-      debugger;
-      console.log(id)
       emailService.getById(id).then((email) => {
         this.email = email;
         //  this.nextBookId = bookService.getNextBookId(book.id)
         //  this.PreviousBookId = bookService.getPreviousBookId(book.id)
       });
     },
+    toggleStar(){
+      console.log(this.email)
+    }
   },
   created() {
-    console.log('erwrwef')
     this.loadEmail();
   },
   watch: {
