@@ -3,40 +3,38 @@ import { storageService } from '../../../async-storage.service.js'
 
 
 const KEEPS_KEY = 'keeps'
-const gKeeps = {
+const gKeeps = [{
 
-    cmp: [{
-            id: utilService.makeId(),
-            type: "noteTxt",
-            isPinned: true,
-            info: {
-                txt: "Fullstack Me Baby!"
-            }
-        },
-        {
-            id: utilService.makeId(),
-            type: "noteImg",
-            info: {
-                url: "http://some-img/me",
-                title: "Me playing Mi"
-            },
-            style: {
-                backgroundColor: "#00d"
-            }
-        },
-        {
-            id: utilService.makeId(),
-            type: "noteTodos",
-            info: {
-                label: "How was it:",
-                todos: [
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do this", doneAt: 187111111 }
-                ]
-            }
+        id: utilService.makeId(),
+        type: "noteTxt",
+        isPinned: true,
+        info: {
+            txt: "Fullstack Me Baby!"
         }
-    ]
-}
+    },
+    {
+        id: utilService.makeId(),
+        type: "noteImg",
+        info: {
+            url: "http://some-img/me",
+            title: "Me playing Mi"
+        },
+        style: {
+            backgroundColor: "#00d"
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "noteTodos",
+        info: {
+            label: "How was it:",
+            todos: [
+                { txt: "Do that", doneAt: null },
+                { txt: "Do this", doneAt: 187111111 }
+            ]
+        }
+    }
+]
 
 
 export const keepService = {
@@ -47,10 +45,6 @@ export const keepService = {
 
 }
 
-
-
-
-
 function query() {
     return storageService.query(KEEPS_KEY)
         .then(keeps => {
@@ -58,6 +52,8 @@ function query() {
                 keeps = gKeeps;
                 utilService.saveToStorage(KEEPS_KEY, gKeeps);
             }
+            console.log(keeps, 'keeps');
+
             return keeps;
         });
 }

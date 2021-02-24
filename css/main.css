@@ -3,7 +3,13 @@
 @import "/css/apps/email/cmps/email-preview.cmp.css"; 
 /* @import "/css/apps/email/cmps/email-preview.cmp.css";  */
 
+@import '/css/basic/fonts.css';
+@import '/css/basic/base.css';
+@import '/css/basic/helpers.css';
 
+/* notes */
+
+@import '/css/apps/keep/main.css';
 
 /* Fonts */
 @font-face {
@@ -61,7 +67,7 @@ html {
     background-color: rgb(238, 235, 235)
 }
 
-li{
+li {
     list-style: none;
 }
 

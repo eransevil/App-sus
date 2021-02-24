@@ -1,23 +1,15 @@
 export default {
+    props: ['info'],
     template: `
-        <section>
-            {{info.txt}}
-            <label v-for="text in info.txt" >
-                <input type="txt"  @change="reportVal" v-model="val">
-                <span>{{text}}</span>
-                &nbsp;&nbsp;
-            </label>
+        <section class = "note-txt">
+            <h3>{{info.title}}</h3>
+            <h4>{{info.txt}}</h4>
+            <input ref="title" class="title" type="text" v-model="info.title">
+            <textarea name="" v-model="info.txt" cols="30" rows="10"></textarea>
         </section>
         `,
-    props: ['info'],
-    data() {
-        return {
-            val: '',
-        }
-    },
-    methods: {
-        reportVal() {
-            this.$emit('setVal', this.val)
-        }
+
+    mounted() {
+        this.$refs.title.focus()
     }
 }

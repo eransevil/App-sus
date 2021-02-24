@@ -1,27 +1,16 @@
 export default {
+    props: ['info'],
     template: `
         <section class="note-img" >
-            <div >
-                <img src="{{info.url}}"  />
-            </div>
-            <h4>{{info.title}}</h4>
-            <button type="button"  @click="reportVal">Done</button>
-           
+            
+            <input ref="title" class="title" type="text" v-model="info.title">
+            <input type="text" v-model="info.url">
+            <img :src="info.url" alt="">  
+            
         </section>
         `,
-    props: ['info'],
-    data() {
-        return {
-            val: '',
-        }
-    },
 
-    methods: {
-        reportVal() {
-            this.$emit('setVal', this.val)
-        }
-    },
-    computed: {
-
+    mounted() {
+        this.$refs.title.focus()
     }
 }

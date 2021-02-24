@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Lato-regular;
+    src: url(../../fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: Lato-bold;
+    src: url(../../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: pts-italic;
+    src: url(../../fonts/Pts/PTSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: pts-regular;
+    src: url(../../fonts/Pts/PTSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto-regular;
+    src: url(../../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: eczar;
+    src: url(../../fonts/Eczar/Eczar-ExtraBold.ttf);
+}
