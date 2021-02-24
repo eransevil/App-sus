@@ -5,7 +5,7 @@ export default {
     name:'emailApp',
     template: `
     <section class= "main-app">
-    <!-- <book-list v-if="!selectedBook" :books="booksToShow" @selected="selectBook"></book-list> -->
+    <email-list v-if="!selectedEmail" :books="EmailToShow" @selected="selectEmail"></email-list>
 
         <h1 class="">email-app</h1>
 

@@ -1,4 +1,4 @@
-// import bookPreview from '../cmps/book-preview.cmp.js';
+import emailPreview from '../cmps/email-preview.cmp.js';
 
 export default {
   props: ['emails'],
@@ -16,6 +16,6 @@ export default {
     },
   },
   components: {
-    // bookPreview,
+    emailPreview,
   },
 };
