@@ -16,7 +16,7 @@ const gKeeps = [{
         id: utilService.makeId(),
         type: "noteImg",
         info: {
-            url: "../../../../img/dog.jpg",
+            url: "img/dog.jpg",
             title: " my image"
         },
         style: {
