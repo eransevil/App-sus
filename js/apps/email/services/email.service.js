@@ -9,7 +9,7 @@ const gEmailsDB = [
     sender: 'Eran Sevil',
     body: 'please call me urgently',
     isRead: false,
-    sentAt: 1551133930594,
+    sentAt:new Date(),
     starred: false,
     type: 'sent',
   },
@@ -19,7 +19,7 @@ const gEmailsDB = [
     body:
       'Your payment #2021AVO-3422r4 was processed. The payment for your invoice is processed by Amazon Payments, Inc. P.O. Box 81226 Seattle, Washington 98108-1226. If you need more information, please contact (866) 216-1075',
     isRead: true,
-    sentAt: 1551132930454,
+    sentAt: new Date(),
     starred: false,
     type: 'inbox',
   },
@@ -29,7 +29,7 @@ const gEmailsDB = [
     body:
       'Thank you for shopping with us. We’ll send a confirmation when your item ships.',
     isRead: false,
-    sentAt: 1551133930594,
+    sentAt:new Date(),
     starred: false,
     type: 'inbox',
   },
@@ -39,7 +39,7 @@ const gEmailsDB = [
     body:
       'Just a quick reminder that we’re always here and ready to help with 24/7 support. Contact us for free basic support via chat',
     isRead: false,
-    sentAt: 1551133930594,
+    sentAt:new Date(),
     starred: false,
     type: 'inbox',
   },
@@ -49,7 +49,7 @@ const gEmailsDB = [
     body:
       'f you do not wish to receive further communications like this, please click here to unsubscribe. Alternatively, you can change your Notification Preferences in My eBay by clicking here. Please note that it may take up to 10 days to process your request.',
     isRead: true,
-    sentAt: 1551132930454,
+    sentAt:new Date(),
     starred: false,
     type: 'sent',
   },
@@ -59,7 +59,7 @@ const gEmailsDB = [
     body:
       'We have detected a publicly accessible Google API key associated with the following Google Cloud Platform project',
     isRead: true,
-    sentAt: 1551132930454,
+    sentAt: new Date(),
     starred: false,
     type: 'inbox',
   },

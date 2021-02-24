@@ -5,9 +5,9 @@ export default {
     name:'emailApp',
     template: `
     <section class= "main-app">
-    <!-- <book-list v-if="!selectedBook" :books="booksToShow" @selected="selectBook"></book-list> -->
+        <h1 class="">emails</h1>
+    <email-list v-if="!selectedEmail" :emails="EmailToShow" @selected="selectEmail"></email-list>
 
-        <h1 class="">email-app</h1>
 
     </section>
 
@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       emails: emailService.query(),
-      selecetMail: null,
+      selectedEmail: null,
       filterBy: null,
     };
   },
@@ -24,7 +24,16 @@ export default {
       emailService.query().then((emails) => (this.emails = emails));
       
     },
+    selectEmail(email) {
+        this.selectedEmail = email;
+      },
   },
+  computed:{
+    EmailToShow() {
+        if (!this.filterBy) return this.emails;
+
+  }
+},
   components: {
     emailList,
   },
