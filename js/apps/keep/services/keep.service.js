@@ -3,54 +3,62 @@ import { storageService } from '../../../async-storage.service.js'
 
 
 const KEEPS_KEY = 'keeps'
-const gKeeps = [{
-        id: utilService.makeId(),
-        type: "keepTxt",
-        isPinned: true,
-        info: {
-            txt: "Fullstack Me Baby!"
-        }
-    },
-    {
-        id: utilService.makeId(),
-        type: "keepImg",
-        info: {
-            url: "http://some-img/me",
-            title: "Me playing Mi"
+const gKeeps = {
+
+    cmp: [{
+            id: utilService.makeId(),
+            type: "noteTxt",
+            isPinned: true,
+            info: {
+                txt: "Fullstack Me Baby!"
+            }
         },
-        style: {
-            backgroundColor: "#00d"
+        {
+            id: utilService.makeId(),
+            type: "noteImg",
+            info: {
+                url: "http://some-img/me",
+                title: "Me playing Mi"
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
+        },
+        {
+            id: utilService.makeId(),
+            type: "noteTodos",
+            info: {
+                label: "How was it:",
+                todos: [
+                    { txt: "Do that", doneAt: null },
+                    { txt: "Do this", doneAt: 187111111 }
+                ]
+            }
         }
-    },
-    {
-        id: utilService.makeId(),
-        type: "keepTodos",
-        info: {
-            label: "How was it:",
-            todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
-            ]
-        }
-    }
-];
+    ]
+}
 
 
 export const keepService = {
     query,
     remove,
     save,
-    getById,
+    getById
 
 }
 
 
+
+
+
 function query() {
     return storageService.query(KEEPS_KEY)
-        .then((keeps) => {
-            console.log('keeps:', keeps)
-
-            return keeps
+        .then(keeps => {
+            if (!keeps.length) {
+                keeps = gKeeps;
+                utilService.saveToStorage(KEEPS_KEY, gKeeps);
+            }
+            return keeps;
         });
 }
 
