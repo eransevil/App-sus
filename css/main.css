@@ -1,7 +1,22 @@
-@import "/css/apps/email/pages/email-app.cmp.css"; /* Using a string */
-@import "/css/apps/email/cmps/email-list.cmp.css"; /* Using a string */
-@import "/css/apps/email/cmps/email-preview.cmp.css"; /* Using a string */
+@import "/css/apps/email/pages/email-app.cmp.css";
 
+/* Using a string */
+
+@import "/css/apps/email/cmps/email-list.cmp.css";
+
+/* Using a string */
+
+@import "/css/apps/email/cmps/email-preview.cmp.css";
+
+/* Using a string */
+
+@import '/css/basic/fonts.css';
+@import '/css/basic/base.css';
+@import '/css/basic/helpers.css';
+
+/* notes */
+
+@import '/css/apps/keep/main.css';
 
 /* header */
 
@@ -25,7 +40,7 @@ html {
     background-color: rgb(243 239 214);
 }
 
-li{
+li {
     list-style: none;
 }
 

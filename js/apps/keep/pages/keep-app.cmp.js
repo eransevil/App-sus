@@ -1,27 +1,20 @@
-import keepList from '../cmps/keep-list.cmp.js'
-import noteTxt from '../cmps/note-txt.cmp.js'
-import noteImg from '../cmps/note-img.cmp.js'
-
-
 import { keepService } from '../services/keep.service.js'
+import keepList from '../cmps/keep-list.cmp.js'
+
 
 export default {
-    name: "keep-app",
     template: `
-    <section v-if="keeps" class= "keep-app main-app">
-        <h1 class="">keep-app</h1>
-        <div v-for="(cmp, idx) in keeps.cmp">
-                    <component :is="cmp.type"  :info="cmp.info"  @setVal="setAns($event, idx)"></component>
-        </div>
-    </section>
+        <section class="keep-app main-app">
+            <main>
+                <keep-list :keeps="keepsToShow"/>
+            </main>
+        </section>
+`,
 
-    `,
     data() {
         return {
             keeps: null,
-
-            answers: [],
-            // filterBy: null
+            filterBy: null,
         }
     },
     methods: {
@@ -29,27 +22,24 @@ export default {
             keepService.query()
                 .then(keeps => this.keeps = keeps)
         },
-        // removeKeep(keepId) {
-        //     keepService.remove(keepId)
-        //         .then(this.loadKeeps)
-        // },
-        setAns(ans, idx) {
-            console.log('Setting the answer: ', ans, 'idx:', idx);
-            this.answers.splice(idx, 1, ans)
+    },
 
-        },
-
-
+    computed: {
+        keepsToShow() {
+            if (!this.filterBy) return this.keeps;
+            // var { byName } = this.filterBy
+            // byName = byName.toLowerCase();
+            // const booksToShow = this.books.filter(({ title, listPrice }) => {
+            //     return (title.toLowerCase().includes(byName)) && (listPrice.amount > this.filterBy.fromPrice) && (listPrice.amount < this.filterBy.toPrice)
+            // })
+            // return booksToShow;
+        }
     },
 
     created() {
         this.loadKeeps();
     },
     components: {
-        // bookFilter,
         keepList,
-        noteTxt,
-        noteImg
-        // bookAdd
     }
 }
