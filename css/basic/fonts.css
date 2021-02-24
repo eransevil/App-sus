@@ -1,27 +1,40 @@
+/* Fonts */
 @font-face {
-    font-family: Lato-regular;
-    src: url(../../fonts/Lato/Lato-Regular.ttf);
-}
-
-@font-face {
-    font-family: Lato-bold;
+    font-family: LatoLight;
     src: url(../../fonts/Lato/Lato-Light.ttf);
 }
 
 @font-face {
-    font-family: pts-italic;
+    font-family: LatoRegular;
+    src: url(../../fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: PTSansItalic;
     src: url(../../fonts/Pts/PTSans-Italic.ttf);
 }
 
 @font-face {
-    font-family: pts-regular;
+    font-family: PTSansRegular;
     src: url(../../fonts/Pts/PTSans-Regular.ttf);
 }
 
 @font-face {
-    font-family: roboto-regular;
+    font-family: RobotoRegular;
     src: url(../../fonts/Roboto/Roboto-Regular.ttf);
 }
+
+@font-face {
+    font-family: RobotoLight;
+    src: url(../../fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: RobotoItalic;
+    src: url(../../fonts/Roboto/Roboto-Italic.ttf);
+}
+
+
 
 @font-face {
     font-family: eczar;
