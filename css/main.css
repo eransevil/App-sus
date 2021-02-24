@@ -1,15 +1,15 @@
-@import "css/apps/email/pages/email-app.cmp.css"; 
-@import "css/apps/email/cmps/email-list.cmp.css"; 
-@import "css/apps/email/cmps/email-preview.cmp.css"; 
+@import "apps/email/pages/email-app.cmp.css"; 
+@import "apps/email/cmps/email-list.cmp.css"; 
+@import "apps/email/cmps/email-preview.cmp.css"; 
 /* @import "/css/apps/email/cmps/email-preview.cmp.css";  */
 
-@import 'css/basic/fonts.css';
-@import 'css/basic/base.css';
-@import 'css/basic/helpers.css';
+@import 'basic/fonts.css';
+@import 'basic/base.css';
+@import 'basic/helpers.css';
 
 /* notes */
 
-@import 'css/apps/keep/main.css';
+@import 'apps/keep/main.css';
 
 /* Fonts */
 @font-face {
