@@ -1,5 +1,5 @@
-import { utilService } from './util.service.js'
-import { storageService } from './async-storage.service.js'
+import { utilService } from '../../../util.service.js'
+import { storageService } from '../../../async-storage.service.js'
 
 
 const KEEPS_KEY = 'keeps'
@@ -49,6 +49,7 @@ function query() {
     return storageService.query(KEEPS_KEY)
         .then((keeps) => {
             console.log('keeps:', keeps)
+
             return keeps
         });
 }
