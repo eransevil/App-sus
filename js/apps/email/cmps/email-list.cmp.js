@@ -6,15 +6,46 @@ export default {
     <ul class="email-list">
     <li v-for="email in emails" :key="email.id" class="email-preview-container">
     <router-link  class="open-mail" :to="'/email/'+email.id">  <email-preview @starredToggle="toggleStar"  :email="email"/>  </router-link>
-          
+     <div @click="showDeleteModal(email.id)"> ✖ </div>
+   
     </li>
     </ul>
     `,
   methods: {
-    toggleStar(starId){
-      this.$emit ('starredToggle' , starId)
-    }
+    toggleStar(emailId) {
+      console.log(emailId)
+      this.$emit('starredToggle', starId);
+    },
+    showDeleteModal(emailId) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          console.log(emailId)
+          this.$emit('deleteEmail', emailId);
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+
+    },
   },
+  computed:{
+    // isModalOpen(){ 
+    //   if(this.isModalOpen)return true
+    //   else return false
+    // }
+  },
+
   components: {
     emailPreview,
   },
