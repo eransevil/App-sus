@@ -5,6 +5,7 @@ export default {
     name:'emailApp',
     template: `
     <section class= "main-app">
+    <!-- <book-list v-if="!selectedBook" :books="booksToShow" @selected="selectBook"></book-list> -->
 
         <h1 class="">email-app</h1>
 
@@ -19,16 +20,15 @@ export default {
     };
   },
   methods: {
-    test() {
-      const test = emailService.query().then((emails) => (this.emails = emails));
+    loadEmails() {
+      emailService.query().then((emails) => (this.emails = emails));
       
-
     },
   },
   components: {
     emailList,
   },
   created(){
-      this.test()
+      this.loadEmails()
   }
 };
