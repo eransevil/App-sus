@@ -9,15 +9,15 @@ const gKeeps = [{
         type: "noteTxt",
         isPinned: true,
         info: {
-            txt: "Fullstack Me Baby!"
+            txt: "Notes Me!"
         }
     },
     {
         id: utilService.makeId(),
         type: "noteImg",
         info: {
-            url: "http://some-img/me",
-            title: "Me playing Mi"
+            url: "../../../../img/dog.jpg",
+            title: " my image"
         },
         style: {
             backgroundColor: "#00d"
@@ -27,10 +27,12 @@ const gKeeps = [{
         id: utilService.makeId(),
         type: "noteTodos",
         info: {
+            title: 'ToDo:',
             label: "How was it:",
             todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
+                { txt: "shopping", doneAt: null },
+                { txt: "go to run", doneAt: null },
+                { txt: "pay to the  gardener", doneAt: 187111111 }
             ]
         }
     }
