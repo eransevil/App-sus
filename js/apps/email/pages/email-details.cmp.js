@@ -1,19 +1,16 @@
 import { emailService } from '../services/email.service.js';
-// import emailCompose from '../pages/email-compose.cmp.js'
-import {eventBus} from '../services/event-bus.service.js';
- 
+import { eventBus } from '../services/event-bus.service.js';
+
 export default {
   name: 'emailDetails',
   template: `
-      <section v-if="email" class="mail-details-container main-app">
-      <!-- <router-link title="Compose" class="compose-link" :to="'/email/'+compose" > ➕</router-link>  -->
-      <router-link  class="x-btn" :to="'/email/'"> ✖</router-link>
-      <div class="email-details"> 
+      <section v-if="email" class=" mail-details-container">
+      <router-link  class="x-btn" :to="'/email/'">✖</router-link>
       <div class="email-info"> 
         <p class="email-subject"> {{email.subject}}</p>
         <p  class="email-subtitle-container"> <span class="email-sender"> {{email.sender}}</span> <span class="email-adress"> {{email.senderAdress}}</span> <span class="email-date"> {{email.sentAt}} </span> </p>
         <p class="email-body" >{{email.body}}</p>
-        </div> 
+        <button class="reply-btn"  @click.prevent="Reply">Reply</button>
         </div>       
           
       </section>
@@ -35,16 +32,20 @@ export default {
         //  this.PreviousBookId = bookService.getPreviousBookId(book.id)
       });
     },
-    toggleStar(){
-      console.log(this.email)
-    }
+    toggleStar() {
+      console.log(this.email);
+    },
+    Reply() {
+      this.$router.push(`/email/compose`)
+    },
   },
+
   created() {
     this.loadEmail();
   },
   watch: {
     '$route.params.id'(id) {
-      console.log(id)
+      console.log(id);
       this.loadEmail();
     },
   },

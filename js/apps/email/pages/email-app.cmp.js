@@ -7,8 +7,11 @@ export default {
     template: `
     <section class= "main-app">
         <h1 class="">emails</h1>
+        <section class="info-nav">
+        <input class="search-input" @input="setSearch" v-model="searchInput" type="text" placeholder="Search mail" >
+        </section> 
 
-    <email-list class="scroll-container" @UnRead="markAsUnRead"  @markRead="markAsRead"  @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail" ></email-list>
+    <email-list class="scroll-container" @renderEmails="setFilter" @UnRead="markAsUnRead"  @markRead="markAsRead"  @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="emailToShow" @click="selectEmail" ></email-list>
 
 
     </section>
@@ -16,9 +19,10 @@ export default {
     `,
   data() {
     return {
-      emails: emailService.query(),
+      emails: null,
       selectedEmail: null,
       filterBy: null,
+      searchInput:''
     };
   },
   methods: {
@@ -61,14 +65,40 @@ export default {
             })
             
           })
-      }
-  },
+      },
+      setFilter(value){
+          this.filterBy = value;
+      },
+      setSearch(){
+        emailService.query()
+          .then(emailReceived =>{
+            const emails =  emailReceived.filter((email)=>{
+                return(email.sender.toLowerCase().includes(this.searchInput.toLowerCase()))
+            })
+            this.emails = emails;
+          }
+          )},
+},
   computed:{
-    EmailToShow() {
-        if (!this.filterBy) return this.emails;
+    emailToShow() {
+        if (!this.filterBy || this.filterBy ==='all') return this.emails;
+        else if(this.filterBy==='inbox'){
+          return this.emails.filter((email) =>{
+            return email.type === 'inbox'
+          } )  
+        }
+        else if(this.filterBy === 'sent'){
+          return this.emails.filter((email) =>{
+            return email.type === 'sent'
+          } )  
+        }
+        else if(this.filterBy === 'starred'){
+          return this.emails.filter((email) =>{
+            return email.starred === false
+          } )  
 
   }
-},
+}},
   components: {
     emailList,
   },

@@ -7,7 +7,7 @@ const gEmailsDB = [
   {
     id: utilService.makeId(),
     subject: 'dear friend',
-    sender: 'Eran Sevil',
+    sender: 'me',
     senderAdress: 'eransevil@gmail.com',
     body: 'please call me urgently',
     isRead: false,
@@ -54,8 +54,8 @@ const gEmailsDB = [
   {
     id: utilService.makeId(),
     subject: 'Don’t miss out, eran!',
-    sender: 'Dany ',
-    senderAdress: 'dany@gmail.com',
+    sender: 'me ',
+    senderAdress: 'eransevil@gmail.com',
     body:
       'f you do not wish to receive further communications like this, please click here to unsubscribe. Alternatively, you can change your Notification Preferences in My eBay by clicking here. Please note that it may take up to 10 days to process your request.',
     isRead: true,
@@ -98,7 +98,7 @@ function createSentEmail(to, subject, body) {
     body,
     isRead: false,
     sentAt: new Date(),
-    starred: false,
+    starred: true,
     type: 'sent',
   };
  return save(email);
@@ -142,3 +142,26 @@ function getById(id) {
 function remove(id) {
   return storageService.remove(EMAILS_KEY, id);
 }
+
+// function filterBy(value) {
+//   ret storageService.query(EMAILS_KEY).then((emails) => {
+//     console.log(value)
+//     if(value==='inbox'){
+//       return emails.filter((email) =>{
+//         return email.type === 'inbox'
+//       } )  
+//     }
+//     else if(value === 'sent'){
+//       return emails.filter((email) =>{
+//         return email.type === 'sent'
+//       } )  
+//     }
+//     else{
+//       return emails.filter((email) =>{
+//         return email.starred === true
+//       } )  
+//     }
+  
+//   });
+// }
+

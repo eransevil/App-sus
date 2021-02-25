@@ -19,7 +19,6 @@ body {
         0 2.1px 2.1px rgba(128, 128, 128, 0.195),
         0 4.4px 4.4px rgba(128, 128, 128, 0.241),
         0 12px 12px rgba(128, 128, 128, 0.35);
-
 }
 
 
@@ -34,6 +33,12 @@ body {
 
 }
 
+.compose-btn-container{
+    display: flex;
+    height: 100px;
+    align-items: flex-end;
+}
+
 .send-btn {
     width: 100px;
     padding: 20px;
@@ -43,8 +48,21 @@ body {
     border-radius: 10px;
     background: #455fe0;
     border: none;
+    cursor: pointer;
+}
+.discard-btn {
+    width: 100px;
+    padding: 20px;
+    margin: 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    background: #c5c5c5;
+    border: none;
+    cursor: pointer;
 }
 
 .field {
     border-bottom: 1px solid rgb(206, 205, 205);
 }
+

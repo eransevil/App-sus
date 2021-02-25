@@ -1,6 +1,6 @@
 export default {
     template: `
-   <header class="app-footer flex align-center space-between">
+   <footer class="app-footer flex align-center space-between">
         <h1> footer</h1>
         <!-- <nav class="nav-bar">
            <router-link active-class="active-link" to="/" exact>Home</router-link> |
@@ -8,7 +8,7 @@ export default {
            <router-link to="/about">About</router-link>
 
        </nav> -->
-    </header>
+    </footer>
     `,
 
 }
