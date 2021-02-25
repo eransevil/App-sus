@@ -1,13 +1,14 @@
 import { emailService } from '../services/email.service.js';
 import emailList from '../cmps/email-list.cmp.js';
-// import { bookService } from '../../../../../../../Dropbox/CaJan21-ExcerciseSubmission/Eran Sevil/Day38-Vue4/Vue-Ex-Book/js/services/book-service.js';
+
 
 export default {
     name:'emailApp',
     template: `
     <section class= "main-app">
         <h1 class="">emails</h1>
-    <email-list @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail"></email-list>
+
+    <email-list @UnRead="markAsUnRead"  @markRead="markAsRead"  @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail" ></email-list>
 
 
     </section>
@@ -42,6 +43,24 @@ export default {
           this.loadEmails()
 
         })
+      },
+      markAsRead(id){
+        emailService.getById(id)
+          .then((email)=>{
+            email.isRead = true;
+            emailService.update(email)
+          })
+      },
+      markAsUnRead(id){
+        console.log(id)
+        emailService.getById(id)
+          .then((email)=>{
+            email.isRead = false;
+            emailService.update(email).then(()=>{
+              this.loadEmails()
+            })
+            
+          })
       }
   },
   computed:{

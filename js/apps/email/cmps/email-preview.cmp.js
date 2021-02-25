@@ -6,18 +6,24 @@ export default {
   template: `
   
     <section  class="email-preview-container"  :class="isRead" >
-      <img @click="toggleStarred" v-if="email.starred" class="star-img" src="images/star-shallow.png"> 
-      <img @click="toggleStarred"  v-else class="star-img" src="images/star-regular.png"> 
+    <div @click="markAsRead(email.id) " class="email-preview-container">  
+      <img title="Mark As Starred" @click="toggleStarred" v-if="email.starred" class="star-img" src="images/star-shallow.png"> 
+      <img title="Mark As UnStarred" @click="toggleStarred"  v-else class="star-img" src="images/star-regular.png"> 
         <p class="email-sender"> {{email.sender}}</p>
         <p class="email-pre-container"> <span class="email-subject"> {{email.subject}} </span> <span class="body-introduction">{{introduction}}</span></p>
         <p class="email-date"> {{convertDate}}</p>
+        </div> 
     </section>
     `,
   methods: {
     toggleStarred(){
       this.$emit ('starredToggle', this.email.id)
-    }
+    },
+    markAsRead(id){
+      this.$emit ('markRead', id)
+    },
   },
+
   computed: {
     isRead() {
       if (this.email.isRead) return 'isRead';

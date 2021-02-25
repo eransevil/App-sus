@@ -1,0 +1,52 @@
+
+.mail-details-container{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.x-btn{
+    color:rgb(128, 125, 125);
+    text-decoration: none;
+}
+
+.email-info{
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-subject{
+    min-height: 50px;
+    font-weight: bold;
+}
+
+.email-subtitle-container{
+    min-height: 200px;
+    min-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email-sender{
+    min-width: 150px;
+}
+
+.email-adress{
+    min-width: 280px;
+    font-size: 15px;
+    font-family: PTSansItalic;
+    color:rgb(138, 135, 135)
+}
+
+.email-date{
+    min-width: 250px;
+}
+
+.email-body{
+    min-width: 300px;
+    min-height: 300px;
+}

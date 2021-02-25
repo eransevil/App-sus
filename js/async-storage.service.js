@@ -15,7 +15,7 @@ function query(entityType) {
 
 function get(entityType, entityId) {
     return query(entityType)
-        .then(entities =>{console.log(entities) 
+        .then(entities =>{
            return entities.find(entity => entity.id === entityId)} )
 }
 
