@@ -75,6 +75,43 @@ const gEmailsDB = [
     starred: true,
     type: 'inbox',
   },
+  {
+    id: utilService.makeId(),
+    subject: '[Live Webinar] AI 101 for Developers',
+    sender: 'Clarifai Team ',
+    senderAdress: 'no-reply@clarifai.com',
+    body:
+      'This webinar is a simplified, yet comprehensive overview to ground you as you explore computer vision, NLP, and AI. Whether youre beginning your journey with AI as a developer or product innovator or simply want a refresher on foundational AI concepts, this webinar is for you',
+    isRead: false,
+    sentAt: new Date(),
+    starred: false,
+    type: 'inbox',
+  },
+  {
+    id: utilService.makeId(),
+    subject: 'started with Chess',
+    sender: 'Chess',
+    senderAdress: 'alert@chess.com',
+    body:
+      'Our whole crew is always eager to hear any feedback or questions you might have. Ping us anytime by replying or shooting an email to support@zeplin.io.',
+    isRead: false,
+    sentAt: new Date(),
+    starred: true,
+    type: 'inbox',
+  },
+
+  {
+    id: utilService.makeId(),
+    subject: 'verify your device',
+    sender: 'GitHub ',
+    senderAdress: 'noreply@github.com',
+    body:
+      'A sign in attempt requires further verification because we did not recognize your device. To complete the sign in, enter the verification code on the unrecognized device.',
+    isRead: false,
+    sentAt: new Date(),
+    starred: true,
+    type: 'inbox',
+  },
 ];
 
 export const emailService = {
@@ -90,7 +127,7 @@ export const emailService = {
 createEmails();
 
 function createSentEmail(to, subject, body) {
-   const email = {
+  const email = {
     id: utilService.makeId(),
     subject,
     sender: 'me',
@@ -101,7 +138,7 @@ function createSentEmail(to, subject, body) {
     starred: true,
     type: 'sent',
   };
- return save(email);
+  return save(email);
 }
 
 function createEmails() {
@@ -149,19 +186,18 @@ function remove(id) {
 //     if(value==='inbox'){
 //       return emails.filter((email) =>{
 //         return email.type === 'inbox'
-//       } )  
+//       } )
 //     }
 //     else if(value === 'sent'){
 //       return emails.filter((email) =>{
 //         return email.type === 'sent'
-//       } )  
+//       } )
 //     }
 //     else{
 //       return emails.filter((email) =>{
 //         return email.starred === true
-//       } )  
+//       } )
 //     }
-  
+
 //   });
 // }
-

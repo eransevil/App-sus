@@ -14,15 +14,9 @@
 @import 'apps/keep/main.css';
 
 
-
-/* header */
-
-
 * {
     box-sizing: border-box;
 }
-
-h1,
 h2,
 h3,
 h4,
@@ -38,6 +32,48 @@ html {
     font-size: 1.5rem;
     background-color: rgb(238, 235, 235)
 }
+body{
+    margin: 0;
+}
+
+
+
+/* header */
+
+.app-header {
+    background-color: rgb(61, 60, 60);
+    height: 10vh;
+    box-shadow:  0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+    color:white;
+}
+
+.link{
+    text-decoration: none;
+    color:white;
+    margin:10px; 
+    font-family: RobotoItalic   ;
+
+}
+
+.appsus-link {
+    font-family: eczar;
+    text-decoration: none;
+    color:white;
+    margin:5px; 
+    font-family: RobotoItalic ;
+    margin:10px;
+}
+
+.link:hover{
+
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    font-weight: 700;
+
+
+
+}
+
+
 
 li {
     list-style: none;
@@ -52,6 +88,29 @@ li {
     height: 10vh;
 }
 
-.app-header {
-    height: 10vh;
+.main-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(61, 60, 60);
+    color: white;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.git-link{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.git-img{
+    height: 30px;
+    width: 30px;
+    color: white;
 }

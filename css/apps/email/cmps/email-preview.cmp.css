@@ -2,12 +2,21 @@
  
 
 .email-preview-container {
+    cursor: pointer;
     width: 100%;
     display: flex;
     font-size: 16px;
     align-items: center;
     align-items: center;
-    border-bottom:1px solid rgb(222, 228, 228)
+    border-bottom:1px solid rgb(222, 228, 228);
+    text-align: left;
+    
+    
+}
+
+.email-preview-container >* {
+    display: flex;
+    align-items: center;    
     
 }
 
@@ -21,17 +30,19 @@
 }
 
 
-.email-sender{
-    min-width: 100px
+.email-preview-container .email-sender{
+    min-width: 120px
 }
-.email-subject{
-    min-width: 200px;
+.email-preview-container .email-subject{
+    min-width: 300px;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
     
     
 }
 
-.body-introduction{
+.email-preview-container .body-introduction{
     font-size: 13px;
     font-weight: normal;
     font-family: RobotoItalic;
@@ -40,7 +51,7 @@
 
 }
 
-.email-date{
+.email-preview-container .email-date{
     font-family:RobotoItalic ;
     font-size: 12px;
     
@@ -49,6 +60,8 @@
 .isRead{
     background-color: rgb(240, 240, 240);
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    color:rgb(110, 109, 109 );
+    font-weight: 0;
 }
 .Unread{
     background-color: rgb(228, 226, 226);

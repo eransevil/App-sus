@@ -8,7 +8,7 @@ export default {
       <router-link  class="x-btn" :to="'/email/'">✖</router-link>
       <div class="email-info"> 
         <p class="email-subject"> {{email.subject}}</p>
-        <p  class="email-subtitle-container"> <span class="email-sender"> {{email.sender}}</span> <span class="email-adress"> {{email.senderAdress}}</span> <span class="email-date"> {{email.sentAt}} </span> </p>
+        <p  class="email-subtitle-container"> <span class="email-sender"> {{email.sender}}</span> <span class="email-adress"> {{email.senderAdress}}</span> <span class="email-date"> {{convertDate}} </span> </p>
         <p class="email-body" >{{email.body}}</p>
         <button class="reply-btn"  @click.prevent="Reply">Reply</button>
         </div>       
@@ -37,6 +37,15 @@ export default {
     },
     Reply() {
       this.$router.push(`/email/compose`)
+    },
+  },
+
+  computed:{
+    convertDate() {
+      var date = this.email.sentAt;
+      date = date.substring(0, 10).split('-');
+      date = date[1] + '-' + date[2] + '-' + date[0];
+      return date;
     },
   },
 

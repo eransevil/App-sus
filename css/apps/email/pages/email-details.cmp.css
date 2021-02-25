@@ -27,10 +27,10 @@
     padding: 10px;
 }
 
-.email-subject{
+ .email-subject{
     min-height: 50px;
     width: 100%;
-    border-bottom: 2px solid lightgray;
+    border-bottom: 1px solid lightgray;
     font-weight: bold;
 }
 
@@ -57,11 +57,17 @@
 
 .email-date{
     min-width: 250px;
+    font-size: 15px;
+    color:rgb(138, 135, 135);
+    font-family: PTSansItalic;
+
+
+
 }
 
 .email-body{
     min-width: 300px;
-    min-height: 300px;
+    min-height: 250px;
     width: 100%;
     display: flex;
     align-self: flex-start;

@@ -15,7 +15,7 @@ export default {
         </div>
       <router-link title="Compose" class="compose-link" :to="'/email/'+compose" > ➕</router-link> 
       <li v-for="email in emails" :key="email.id" class="email-preview-container">
-        <router-link  class="open-mail" :to="'/email/'+email.id">  <email-preview @markRead="mark"  @starredToggle="toggleStar"  :email="email"/>  </router-link>
+         <email-preview @click.native="renderPreview(email.id)"  @markRead="mark"  @starredToggle="toggleStar"  :email="email"/>  
         <div title="Mark As UnRead"  @click="MarkUnRead(email.id)" class="unread-btn"> 📩 </div>
         <div title="Delete"  @click="showDeleteModal(email.id)" class="delete-btn"> ✖ </div>
       </li>
@@ -25,6 +25,8 @@ export default {
     toggleStar(emailId) {
       console.log(emailId);
       this.$emit('starredToggle', emailId);
+      
+      
     },
     showDeleteModal(emailId) {
       Swal.fire({
@@ -54,6 +56,9 @@ export default {
     filterby(value) {
       this.$emit('renderEmails', value);
     },
+    renderPreview(emailId){
+      this.$router.push(`/email/${emailId}`);
+    }
   },
 
   computed: {

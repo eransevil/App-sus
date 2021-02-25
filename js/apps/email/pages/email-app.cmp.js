@@ -6,7 +6,7 @@ export default {
     name:'emailApp',
     template: `
     <section class= "main-app">
-        <h1 class="">emails</h1>
+      <hr class="hr">
         <section class="info-nav">
         <input class="search-input" @input="setSearch" v-model="searchInput" type="text" placeholder="Search mail" >
         </section> 
@@ -38,7 +38,9 @@ export default {
         emailService.getById(starId)
           .then((email)=>{
             email.starred = !email.starred;
-            emailService.update(email )
+            emailService.update(email)
+          }).then(()=>{
+            this.loadEmails()
           })
       },
       removeEmail(emailId){
