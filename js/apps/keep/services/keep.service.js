@@ -41,8 +41,8 @@ const gKeeps = [{
 
 export const keepService = {
     query,
-    remove,
-    save,
+    deleteNote,
+    saveNote,
     getById
 
 }
@@ -61,17 +61,18 @@ function query() {
 }
 
 
-function remove(keepId) {
+function deleteNote(keepId) {
     return storageService.remove(KEEPS_KEY, keepId);
 }
 
-function save(keep) {
+function saveNote(keep) {
     if (keep.id) {
         return storageService.put(KEEPS_KEY, keep);
     } else {
         return storageService.post(KEEPS_KEY, keep);
     }
 }
+
 
 function getById(id) {
     return storageService.get(KEEPS_KEY, id);
