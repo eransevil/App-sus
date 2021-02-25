@@ -1,0 +1,26 @@
+.container-app {
+    background-image: url("../../img/bgc.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+    background-color: aqua;
+}
+
+h1.header-app {
+    text-shadow: 5px -4px 7px rgba(30, 43, 65, 0.64);
+    font-size: 90px;
+    font-family: eczar;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.877);
+    text-align: center;
+}
+
+.app-footer {
+    text-shadow: 5px -4px 7px rgba(30, 43, 65, 0.64);
+    font-size: 20px;
+    font-family: eczar;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.877);
+    text-align: center;
+}

@@ -9,16 +9,17 @@ export default {
 
             <template v-else class= "note-edit-container">
             <input ref="title" class="title" type="text" v-model="info.title" @keyup.enter="saveEdit">
-            <textarea name="" v-model="info.txt" cols="20" rows="10"></textarea>
+            <textarea name="" v-model="info.txt" cols="20" rows="10" @keyup.enter="saveEdit"></textarea>
             </template>
         </section>
         `,
 
-
-    mounted() {
-        if (this.edit) {
-            this.$refs.title.focus()
+    methods: {
+        saveEdit() {
+            this.$emit('editTxt', false, this.txt)
         }
-
+    },
+    mounted() {
+        if (this.isEdit) this.$refs.title.focus()
     }
 }

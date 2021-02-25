@@ -9,7 +9,7 @@ export default {
         <section v-if="keeps" class="keep-app main-app">
             <main>
                 <keep-add-note class="add-notes"/>
-                <keep-list :keeps="keepsToShow"/>
+                <keep-list :keeps="keepsToShow" @deleteNote="deleteNote" @changeColor="changeBgc"/>
 
             </main>
         </section>
@@ -26,6 +26,24 @@ export default {
             keepService.query()
                 .then(keeps => this.keeps = keeps)
         },
+        deleteNote(keepId) {
+            keepService.deleteNote(keepId)
+                .then(this.loadKeeps)
+        },
+
+        changeBgc(colorObj) {
+            console.log('colorObj:', colorObj)
+            console.log(colorObj.id)
+            keepService.getById(colorObj.id)
+                .then((keep) => {
+                    keep.style.backgroundColor = colorObj.color
+                    console.log('neׁwkeep:', keep)
+                    keepService.saveNote(keep)
+                        .then(this.loadKeeps)
+                })
+
+        }
+
     },
 
     computed: {

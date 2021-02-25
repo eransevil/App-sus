@@ -5,14 +5,19 @@ export default {
     template: `
     <section class = "keep-list flex justify-center flex-wrap align-center">
         <div v-for="keep in keeps" :key="keep.id" class="keep-list-container" >
-            <keep-preview :keep="keep" @click.native="logId(keep.id)" />
+            <keep-preview :keep="keep" @deleteNote="deleteNote" @changeBgc="newBgc" />
         </div>
     </section>
     `,
     methods: {
 
-        logId(keepId) {
-            console.log('Id is', keepId);
+
+        deleteNote(keepId) {
+            this.$emit('deleteNote', keepId)
+        },
+        newBgc(colorObj) {
+            console.log('here?');
+            this.$emit('changeColor', colorObj)
         }
     },
     components: {

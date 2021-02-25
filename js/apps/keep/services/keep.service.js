@@ -10,17 +10,20 @@ const gKeeps = [{
         isPinned: true,
         info: {
             txt: "Notes Me!"
+        },
+        style: {
+            backgroundColor: "#ffab73"
         }
     },
     {
         id: utilService.makeId(),
         type: "noteImg",
         info: {
-            url: "img/dog.jpg",
+            url: "./img/dog.jpg",
             title: " my image"
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#ffd384"
         }
     },
     {
@@ -34,6 +37,9 @@ const gKeeps = [{
                 { txt: "go to run", doneAt: null },
                 { txt: "pay to the  gardener", doneAt: 187111111 }
             ]
+        },
+        style: {
+            backgroundColor: "#fff9b0"
         }
     }
 ]
@@ -46,6 +52,7 @@ export const keepService = {
     getById,
     getEmptyNote,
     addNewNote,
+    updateNoteProp
 
 }
 
@@ -66,14 +73,13 @@ function deleteNote(keepId) {
     return storageService.remove(KEEPS_KEY, keepId);
 }
 
-function saveNote(keepId) {
-    if (keepId) {
-        return storageService.put(KEEPS_KEY, keepId);
+function saveNote(keep) {
+    if (keep.id) {
+        return storageService.put(KEEPS_KEY, keep);
     } else {
-        return storageService.post(KEEPS_KEY, keepId);
+        return storageService.post(KEEPS_KEY, keep);
     }
 }
-
 
 function getById(id) {
     return storageService.get(KEEPS_KEY, id);
@@ -103,7 +109,21 @@ function addNewNote(newNote) {
             newNote.info.url = newNote.info.txt;
             newNote.info.title = 'title';
             break;
+        case 'noteTxt':
+            newNote.info.txt = newNote.info.txt;
+            newNote.info.title = 'title';
+            break;
+
     }
     gKeeps.unshift(newNote);
     utilService.saveToStorage(KEEPS_KEY, gKeeps);
+}
+
+function updateNoteProp(keepId, prop, val) {
+    let keepToEdit;
+    getById(keepId).then((keep) => {
+        keepToEdit = keep;
+        keepToEdit[prop] = val;
+        utilService.saveToStorage(KEEPS_KEY, gKeeps);
+    });
 }
