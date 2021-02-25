@@ -112,6 +112,43 @@ const gEmailsDB = [
     starred: true,
     type: 'inbox',
   },
+  {
+    id: utilService.makeId(),
+    subject: 'verify your account',
+    sender: 'microsoft ',
+    senderAdress: 'noreply@microsoft.com',
+    body:
+      'Our whole crew is always requires further verification because we did not recognize your device. To complete the sign in, enter the verification code on the unrecognized device.',
+    isRead: false,
+    sentAt: new Date(),
+    starred: false,
+    type: 'inbox',
+  },
+  {
+    id: utilService.makeId(),
+    subject: 'Upgrade Your Learning Experience!',
+    sender: 'GeeksforGeeks  ',
+    senderAdress: 'o-reply@geeksforgeeks.org',
+    body:
+      'Hey Geek,Choose Knowledge. Choose Inspiration. Choose Success.Choose GeeksforGeeks Premium.Why Go Premium? So that you can get access to:Ad-free Content for zero interruptionsAdditional discounts on our coursesDiscussion Forum with Industry Expert',
+    isRead: false,
+    sentAt: new Date(),
+    starred: true,
+    type: 'inbox',
+  },
+
+  {
+    id: utilService.makeId(),
+    subject: 'Updated Language Settings',
+    sender: 'amazon  ',
+    senderAdress: 'confirm@amazon.com',
+    body:
+      'This change will not impact the language of preference in your mobile app. To apply these changes in your Amazon app, please log out and back in from the application or access the “settings” and adjust it within the country and language section.',
+    isRead: false,
+    sentAt: new Date(),
+    starred: false,
+    type: 'inbox',
+  },
 ];
 
 export const emailService = {
