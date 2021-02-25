@@ -11,11 +11,14 @@ export default {
             <option value="#79a3b1"></option>
         </datalist>
 
-        <button @click="saveEdit">Save</button>
+        <i class="fas fa-edit" title="edit" @click="doneEdit"></i>
+
+        <i class="far fa-save" title="save" @click="saveEdit"></i>
        
-        <button><input @change="setBgC" type="color" v-model="color" list="colorList" value="#ffab73"/></button>
+        <button><input @change="setBgC" type="color" v-model="color" list="colorList" value="#ffab73"/></button> <i class="fas fa-palette"></i>
         
-        <button @click="deleteNoteById">Delete</button>
+        <i class="fas fa-trash-alt" title="delete" @click="deleteNoteById"></i>
+        
         
     
     </section>
@@ -26,9 +29,14 @@ export default {
         };
     },
     methods: {
-        saveEdit() {
-            this.$emit('saveEdit');
+        saveEdit(id) {
+
+            this.$emit('saveNote');
         },
+        doneEdit() {
+            this.$emit('edit')
+        },
+
         deleteNoteById() {
             this.$emit('deleteNote');
         },

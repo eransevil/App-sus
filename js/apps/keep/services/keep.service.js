@@ -43,7 +43,9 @@ export const keepService = {
     query,
     deleteNote,
     saveNote,
-    getById
+    getById,
+    getEmptyNote,
+    addNewNote,
 
 }
 
@@ -60,20 +62,48 @@ function query() {
         });
 }
 
-
 function deleteNote(keepId) {
     return storageService.remove(KEEPS_KEY, keepId);
 }
 
-function saveNote(keep) {
-    if (keep.id) {
-        return storageService.put(KEEPS_KEY, keep);
+function saveNote(keepId) {
+    if (keepId) {
+        return storageService.put(KEEPS_KEY, keepId);
     } else {
-        return storageService.post(KEEPS_KEY, keep);
+        return storageService.post(KEEPS_KEY, keepId);
     }
 }
 
 
 function getById(id) {
     return storageService.get(KEEPS_KEY, id);
+}
+
+function getEmptyNote(type) {
+    const newNote = {
+        type: type,
+        id: utilService.makeId(),
+    };
+    switch (type) {
+        case 'noteTxt':
+            newNote.info = { txt: '' };
+            break;
+        case 'noteImg':
+            newNote.info = { url: '', title: '' };
+            break;
+    }
+    return newNote;
+}
+
+function addNewNote(newNote) {
+    console.log('newNote:', newNote)
+
+    switch (newNote.type) {
+        case 'noteImg':
+            newNote.info.url = newNote.info.txt;
+            newNote.info.title = 'title';
+            break;
+    }
+    gKeeps.unshift(newNote);
+    utilService.saveToStorage(KEEPS_KEY, gKeeps);
 }
