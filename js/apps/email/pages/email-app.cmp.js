@@ -8,7 +8,7 @@ export default {
     <section class= "main-app">
         <h1 class="">emails</h1>
 
-    <email-list @UnRead="markAsUnRead"  @markRead="markAsRead"  @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail" ></email-list>
+    <email-list class="scroll-container" @UnRead="markAsUnRead"  @markRead="markAsRead"  @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="EmailToShow" @click="selectEmail" ></email-list>
 
 
     </section>

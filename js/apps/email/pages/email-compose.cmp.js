@@ -3,7 +3,7 @@ import { emailService } from '../services/email.service.js';
 Vue.use(VueRouter) 
 export default {
   name: 'emailCompose',
-  template: `<section class="main-app container">
+  template: `<section class="main-app container ">
 	<form class="compose-form">
 			<input v-model="to" class="input-addressee field" type="text" placeholder="Addressee" required>
 			<input v-model="subject"  class="input-subject field" type="text" placeholder="Subject">

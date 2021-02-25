@@ -1,0 +1,15 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+
+  .scroll-container {
+    height:95%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  
+  section {
+    scroll-snap-align: center;
+  }
