@@ -1,9 +1,9 @@
 .container-app {
-    background-image: url("../../img/bgc.jpg");
+    /* background-image: url("../../img/bgc.jpg"); */
     background-attachment: fixed;
     background-size: cover;
     z-index: -1;
-    background-color: aqua;
+    background-color: rgb(228, 231, 231);
 }
 
 h1.header-app {
