@@ -1,13 +1,15 @@
-@import "apps/email/pages/email-app.cmp.css"; 
-@import "apps/email/cmps/email-list.cmp.css"; 
-@import "apps/email/cmps/email-preview.cmp.css"; 
+@import "apps/email/pages/email-app.cmp.css";
+@import "apps/email/cmps/email-list.cmp.css";
+@import "apps/email/cmps/email-preview.cmp.css";
 @import "apps/email//pages/email-details.cmp.css";
 @import "apps/email/pages/email-compose.cmp.css";
+
 /* @import "/css/apps/email/cmps/email-preview.cmp.css";  */
 
 @import 'basic/fonts.css';
 @import 'basic/base.css';
 @import 'basic/helpers.css';
+@import 'pages/home-page.css';
 
 /* notes */
 
@@ -24,7 +26,7 @@ h5,
 h6,
 p {
     margin: 0;
-    font-family:LatoRegular ;
+    font-family: LatoRegular;
 }
 
 html {

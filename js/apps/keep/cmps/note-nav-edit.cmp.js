@@ -1,21 +1,22 @@
 export default {
     template: `
     <section class="note-nav-edit"> 
+        <i class="fas fa-palette" @click="toggleBgc">
 
-        <datalist id="colorList">
-            <option value="#ffab73"></option>
-            <option value="#ffd384"></option>
-            <option value="#d0e8f2"></option>
-            <option value="#fff9b0"></option>
-            <option value="#ffaec0"></option>
-            <option value="#79a3b1"></option>
-        </datalist>
+        <div v-show="color" id="colorList">
+            <button @click="setBgC('#ffab73')" class="bgc bgc-1" value="#ffc097"></button>
+            <button @click="setBgC('#ffd384')" class="bgc bgc-2" value="#ff9784"></button>
+            <button @click="setBgC('#d0e8f2')" class="bgc bgc-3" value="#d0e8f2"></button>
+            <button @click="setBgC('#fff9b0')" class="bgc bgc-4" value="#f2fa7f"></button>
+            <button @click="setBgC('#ffaec0')" class="bgc bgc-5" value="#ffaec0"></button>
+        </div>
+        </i>
+        
+        <i class="fas fa-thumbtack" @click="pinned"></i>
 
         <i class="fas fa-edit" title="edit" @click="doneEdit"></i>
 
         <i class="far fa-save" title="save" @click="saveEdit"></i>
-       
-        <button><input @change="setBgC" type="color" v-model="color" list="colorList" value="#ffab73"/></button> <i class="fas fa-palette"></i>
         
         <i class="fas fa-trash-alt" title="delete" @click="deleteNoteById"></i>
         
@@ -25,10 +26,14 @@ export default {
     `,
     data() {
         return {
-            color: '#ffab73',
+            color: false,
         };
     },
     methods: {
+
+        toggleBgc() {
+            this.color = !this.color;
+        },
         saveEdit(id) {
 
             this.$emit('saveNote');
@@ -40,9 +45,12 @@ export default {
         deleteNoteById() {
             this.$emit('deleteNote');
         },
-        setBgC() {
-            this.$emit('setBgC', this.color)
+        setBgC(color) {
+            this.$emit('setBgC', color)
         },
+        pinned() {
+            this.$emit('doPinned')
+        }
 
     },
 };
