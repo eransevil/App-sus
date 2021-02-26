@@ -110,6 +110,7 @@ li {
     color: white;
 }
 
+<<<<<<< HEAD
 .app-header .btn-menu {
     color: #fefefe;
     text-shadow: 1px 1px 1px #000;
@@ -143,3 +144,19 @@ li {
         box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
     }
 }
+=======
+
+@media screen and (max-width: 960px) {
+    html{
+        font-size: unset;
+    }
+    .main-footer{
+        font-size: 16px;
+        padding: 2px;
+        
+    }
+    
+  }
+  
+ 
+>>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38

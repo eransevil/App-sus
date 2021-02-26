@@ -35,6 +35,7 @@ section {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 .compose-link {
     position: fixed;
     left: 10px;
@@ -73,4 +74,87 @@ section {
 
 .filter-btn:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+=======
+
+.main-app {
+  margin: 50px 0;
+  width: 100%;
+  min-width: 200px;
+  height: 50px;
+  text-align: center;
+}
+
+.compose-link {
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+
+}
+
+
+
+.nav-bar-btn-container {
+  font-family: LatoRegular;
+  border-radius: 3px;
+  font-size: 15px;
+  display: flex;
+  max-width: 400px;
+  background: rgb(236, 236, 236);
+  overflow-x: hidden;
+  margin-left: 50px;
+
+}
+
+.filter-btn {
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+  height: 30px;
+  width: 100px;
+  border: 1px solid lightgray;
+  font-family: LatoRegular;
+
+}
+
+.filter-btn:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+@media screen and (max-width: 960px) {
+  
+  .scroll-container{
+    max-width:  900px;
+  }
+
+  .main-app{
+    max-width:  900px;
+
+  }
+}
+
+@media screen and (max-width: 750px) {
+  
+  .scroll-container{
+    max-width:  700px;
+  }
+  .main-app{
+    max-width:  700px;
+
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .scroll-container{
+    max-width: 450px;
+  }
+  .main-app{
+    max-width:  450px;
+  }
+
+  .read-delete-btn-container{
+    width: 20px;
+  }
+
+>>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38
 }

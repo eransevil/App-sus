@@ -1,17 +1,27 @@
 import { emailService } from '../services/email.service.js';
 import emailList from '../cmps/email-list.cmp.js';
+import emailCompose from '../pages/email-compose.cmp.js';
+
 
 
 export default {
     name:'emailApp',
-    template: `
+    template: ` 
     <section class= "main-app">
       <hr class="hr">
         <section class="info-nav">
-        <input class="search-input" @input="setSearch" v-model="searchInput" type="text" placeholder="Search mail" >
-        </section> 
+        <div class="nav-bar-btn-container"> 
+        <div class="filter-btn inbox-filter-btb" @click="setFilter('all')">All</div>
+        <div class="filter-btn inbox-filter-btb" @click="setFilter('inbox')">Inbox</div>
+        <div class="filter-btn  sent-filter-btb" @click="setFilter('sent')">Sent</div>
+        <div class="filter-btn  sent-filter-btb" @click="setFilter('starred')">Starred</div>
+      </div>
+      <input class="search-input" @input="setSearch" v-model="searchInput" type="text" placeholder="Search mail" >
+    </section> 
+    <router-link title="Compose" class="compose-link" :to="'/email/'+compose" > ➕</router-link> 
 
-    <email-list class="scroll-container" @renderEmails="setFilter" @UnRead="markAsUnRead"  @markRead="markAsRead"  @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="emailToShow" @click="selectEmail" ></email-list>
+
+    <email-list class="scroll-container" @UnRead="markAsUnRead"  @markRead="markAsRead"  @starredToggle="toggleStar" @deleteEmail="removeEmail" v-if="!selectedEmail" :emails="emailToShow" @click="selectEmail" ></email-list>
 
 
     </section>
@@ -100,9 +110,15 @@ export default {
           } )  
 
   }
-}},
+},
+compose() {
+  return 'compose';
+},
+},
   components: {
     emailList,
+    emailCompose,
+
   },
   created(){
       this.loadEmails()
