@@ -60,9 +60,6 @@
     font-size: 15px;
     color:rgb(138, 135, 135);
     font-family: PTSansItalic;
-
-
-
 }
 
 .email-body{
@@ -92,3 +89,48 @@
     cursor: pointer;
 }
 
+
+
+@media screen and (max-width: 760px) {
+
+    .email-subtitle-container{
+        min-height: 100px;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 5px;
+        
+    }
+
+    .email-info{
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border:1px solid lightgray;
+        margin:10px;
+        padding: 10px;
+    }
+   
+    .email-sender{
+        min-width: 120px;
+        padding: 3px;  
+
+    }
+
+    .email-adress{
+        min-width: 230px;
+        font-size: 14px;
+        padding: 3px;  
+
+    }
+
+
+    .email-date{
+        min-width: 150px;
+        font-size: 13px;  
+        padding: 3px;  
+    }
+    
+}

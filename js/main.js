@@ -9,7 +9,7 @@ const options = {
     template: `
         <section>
             <app-header/>
-            <!-- <user-msg /> -->
+         
             <router-view />
             <app-footer/>
            
@@ -18,7 +18,6 @@ const options = {
     components: {
         appHeader,
         appFooter
-
     }
 }
 

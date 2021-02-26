@@ -13,6 +13,8 @@
 
 /* notes */
 
+@import 'cmps/app-header.css';
+@import 'cmps//app-footer.css';
 @import 'apps/keep/main.css';
 * {
     box-sizing: border-box;

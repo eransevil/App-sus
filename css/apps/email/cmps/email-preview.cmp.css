@@ -45,15 +45,17 @@
     font-size: 13px;
     font-weight: normal;
     font-family: RobotoItalic;
-    min-width: 400px;
+    min-width: 250px;
+    max-width: 300px;
 
 
 }
 
-.email-preview-container .email-date {
+.email-date {
     font-family: RobotoItalic;
     font-size: 12px;
-
+    max-width: 100px;
+    width: 100px;
 }
 
 .isRead {
@@ -79,18 +81,51 @@
 @media screen and (max-width: 960px) {
 
     .scroll-container {
-        max-width: 900px;
+        max-width: 950px;
     }
 
     .main-app {
         max-width: 900px;
 
     }
+
+
+
+    .email-preview-container .email-sender {
+        min-width: 100px;
+        max-width: 160px;
+        font-size: 14px;
+    }
+
+    .email-preview-container .email-subject {
+        font-size: 14px;
+        min-width: 240px;
+        max-width: 440px;
+    }
+
+
+    .email-preview-container .body-introduction {
+        font-size: 12px;
+        min-width: 160px;
+        max-width: 260px;
+        
+
+
+    }
+
+ 
+
+   
 }
 
 @media screen and (max-width: 750px) {
+
+    .scroll-container{
+        max-width: 700px;
+    }
+
     .email-preview-container{
-        width: 550px;
+       max-width: 550px;
     }
 
     .email-preview-container .email-sender {
@@ -108,7 +143,6 @@
     .email-preview-container .body-introduction {
         font-size: 11px;
         min-width: 160px;
-
     }
 
     .email-preview-container .email-date {
@@ -119,32 +153,39 @@
 
 
 @media screen and (max-width: 500px) {
+    .scroll-container{
+        max-width: 490px;
+    }
+
+    .main-app {
+        max-width:500px;
+
+    }
     .email-preview-container{
-        width: 370px;
+        max-width: 400px;
     }
 
     .email-preview-container .email-sender {
-        min-width: 40px;
-        font-size: 11px;
+        min-width: 35px;
+        max-width: 45px;
+        font-size: 10px;
     }
 
     .email-preview-container .email-subject {
         font-size: 10px;
-        min-width: 100px;
-        max-width: 150px;
+        min-width: 80px;
+        max-width: 140px;
     }
 
 
     .email-preview-container .body-introduction {
-        font-size: 10px;
-        min-width: 120px;
+        font-size: 9px;
+        min-width: 110px;
 
     }
 
     .email-preview-container .email-date {
-        font-size: 10px;
-        min-width: 50px;
-
+        display: none;
     }
 
 

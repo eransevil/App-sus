@@ -11,10 +11,13 @@
 }
 
 .scroll-container {
+    min-width: 1000px;
+    max-width: 1400px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 3px 0px, rgba(27, 31, 35, 0.15) 1px 1px 1px 0px;
-    height: 80%;
+    height: 58%;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+
 }
 
 section {
@@ -35,46 +38,6 @@ section {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-.compose-link {
-    position: fixed;
-    left: 10px;
-    text-decoration: none;
-    border-radius: 50%;
-    border: 1px solid white;
-    padding: 10px
-}
-
-.main-app {
-    margin: 50px 0;
-    width: 100%;
-    min-width: 200px;
-    height: 50px;
-    text-align: center;
-}
-
-.nav-bar-btn-container {
-    width: 60px;
-    font-family: LatoRegular;
-    border-radius: 3px;
-    font-size: 15px;
-    position: fixed;
-    z-index: 1;
-    top: 300px;
-    left: 10px;
-    background: rgb(236, 236, 236);
-    overflow-x: hidden;
-}
-
-.filter-btn {
-    cursor: pointer;
-    border-bottom: 1px solid lightgray;
-    height: 30px;
-}
-
-.filter-btn:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-=======
 
 .main-app {
   margin: 50px 0;
@@ -124,12 +87,18 @@ section {
 @media screen and (max-width: 960px) {
   
   .scroll-container{
-    max-width:  900px;
+    max-width:  950px;
+    min-width: unset;
+
   }
 
   .main-app{
     max-width:  900px;
 
+  }
+
+  .filter-btn{
+    width: 100px;
   }
 }
 
@@ -141,6 +110,17 @@ section {
   .main-app{
     max-width:  700px;
 
+  }
+
+  .filter-btn{
+    width: 85px;
+  }
+  
+  .nav-bar-btn-container{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 20px;
+    max-width: 280px;
   }
 }
 
@@ -155,6 +135,9 @@ section {
   .read-delete-btn-container{
     width: 20px;
   }
+  .filter-btn{
+    width: 70px;
+  }
 
->>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38
+
 }

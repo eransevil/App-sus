@@ -5,7 +5,8 @@ export default {
        <nav class="nav-bar">
            <div class="main-screen" @click.stop="toggleMenu"></div>
            <div class="links">
-               <router-link class="link keep-link" to="/keep">Keep</router-link> 
+   
+          <router-link class="link keep-link" to="/keep"> Keep</router-link> 
           <router-link class="link keep-link" to="/email">Email</router-link> 
           <router-link class="link keep-link" to="/book">Book</router-link>
         </div>
@@ -17,6 +18,7 @@ export default {
     methods: {
         toggleMenu() {
             document.body.classList.toggle('menu-open');
+
         }
     },
     destroyed() {

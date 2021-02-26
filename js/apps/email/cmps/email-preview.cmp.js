@@ -6,12 +6,13 @@ export default {
   template: `
   
     <section  class="email-preview-container"  :class="isRead" >
-    <div @click="markAsRead(email.id) " class="email-preview-container">  
+      
       <img title="Mark As Starred" @click.stop="toggleStarred" v-if="email.starred" class="star-img" src="./images/star-shallow.png"> 
       <img title="Mark As UnStarred" @click.stop="toggleStarred"  v-else class="star-img" src="./images/star-regular.png"> 
         <p class="email-sender"> {{email.sender}}</p>
         <p class="email-pre-container"> <span class="email-subject"> {{email.subject}} </span> <span class="body-introduction">{{introduction}}</span></p>
         <p class="email-date"> {{convertDate}}</p>
+        <div @click="markAsRead(email.id) " class="email-preview-container">  
         </div> 
     </section>
     `,
