@@ -35,46 +35,6 @@ section {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-.compose-link {
-    position: fixed;
-    left: 10px;
-    text-decoration: none;
-    border-radius: 50%;
-    border: 1px solid white;
-    padding: 10px
-}
-
-.main-app {
-    margin: 50px 0;
-    width: 100%;
-    min-width: 200px;
-    height: 50px;
-    text-align: center;
-}
-
-.nav-bar-btn-container {
-    width: 60px;
-    font-family: LatoRegular;
-    border-radius: 3px;
-    font-size: 15px;
-    position: fixed;
-    z-index: 1;
-    top: 300px;
-    left: 10px;
-    background: rgb(236, 236, 236);
-    overflow-x: hidden;
-}
-
-.filter-btn {
-    cursor: pointer;
-    border-bottom: 1px solid lightgray;
-    height: 30px;
-}
-
-.filter-btn:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-=======
 
 .main-app {
   margin: 50px 0;
@@ -156,5 +116,4 @@ section {
     width: 20px;
   }
 
->>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38
 }

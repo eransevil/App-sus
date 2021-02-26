@@ -12,7 +12,8 @@
 @import 'pages/home-page.css';
 
 /* notes */
-
+@import 'cmps/app-header.css';
+@import 'cmps//app-footer.css';
 @import 'apps/keep/main.css';
 * {
     box-sizing: border-box;
@@ -41,122 +42,14 @@ body {
 
 /* header */
 
-.app-header {
-    background-color: rgb(25 42 64);
-    opacity: 0.8;
-    height: 10vh;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
-    color: white;
-}
-
-.link {
-    text-decoration: none;
-    color: white;
-    margin: 10px;
-    font-family: RobotoItalic;
-}
-
-.appsus-link {
-    font-family: eczar;
-    text-decoration: none;
-    color: white;
-    margin: 5px;
-    font-family: RobotoItalic;
-    margin: 10px;
-}
-
-.link:hover {
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    font-weight: 700;
-}
-
-li {
-    list-style: none;
-}
-
 .main-app {
     margin: 0;
     height: 83vh;
 }
 
-.app-footer {
-    height: 7vh;
-}
-
-.main-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(25 42 64);
-    opacity: 0.8;
-    color: white;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-.git-link {
-    display: flex;
-    justify-content: space-around;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.git-img {
-    height: 30px;
-    width: 30px;
-    color: white;
-}
-
-<<<<<<< HEAD
-.app-header .btn-menu {
-    color: #fefefe;
-    text-shadow: 1px 1px 1px #000;
-    margin-bottom: .85rem;
-}
-
-@media (max-width: 620px) {
-    .nav-bar .links {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 12.5rem;
-        align-items: center;
-        z-index: 100;
-        background-color: rgba(255, 255, 255, 0.8);
-        border-left: 1px solid #c4c4c4;
-        transform: translateX(100%);
-        transition: transform .8s, box-shadow .3s;
-    }
-    .links>* {
-        margin-block-end: 1rem;
-        /* width: 100%; */
-    }
-    .links>*:first-of-type {
-        margin-block-start: 1rem;
-    }
-    .menu-open .links {
-        transform: translateX(0);
-        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
-    }
-}
-=======
 
 @media screen and (max-width: 960px) {
     html{
         font-size: unset;
     }
-    .main-footer{
-        font-size: 16px;
-        padding: 2px;
-        
-    }
-    
-  }
-  
- 
->>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38
+}

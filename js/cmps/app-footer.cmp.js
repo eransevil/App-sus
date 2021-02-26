@@ -3,13 +3,10 @@ export default {
    <footer class="app-footer flex align-center space-between">
         <div class="main-footer"> 
             <a class="git-link" href="https://github.com/lizamir">
-                <img class="git-img" src="./images/Giticon.png">
+             &copy Liz Hagag
             </a>
-            <p class="copy-right">
-                 &copy Liz Hagag & Eran Sevil
-            </p>
             <a class="git-link" href="https://github.com/eransevil">
-                <img class="git-img" src="./images/Giticon.png">
+            & Eran Sevil
             </a>
            
         </div>
