@@ -18,7 +18,6 @@ export default {
     methods: {
         toggleMenu() {
             document.body.classList.toggle('menu-open');
-
         }
     },
     destroyed() {
