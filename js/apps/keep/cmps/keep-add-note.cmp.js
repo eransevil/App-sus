@@ -1,21 +1,20 @@
 import noteTxt from './note-txt.cmp.js'
 import noteImg from './note-img.cmp.js'
+import noteVideo from './note-video.cmp.js'
 import noteTodos from './note-todos.cmp.js'
 import noteNavEdit from './note-nav-edit.cmp.js'
 import { keepService } from '../services/keep.service.js'
 
 export default {
     template: `
-    <section  class="note-edit flex">
+    <section  class="note-edit flex align-center justify-center">
         <div class= "edit-container flex wrap">
         <input ref="inputNote" :placeholder="place[noteType]"  v-if="newNote" v-model="newNote.info.txt" @keyup.enter.prevent="addNewNote(newNote)" />
             <div class="btn-add">
-                <button title="Text" @click.stop="setNoteType('noteTxt')">
-                <i class="fas fa-font"></i>
-                </button>
-                <button title="Image" @click.stop="setNoteType('noteImg')"> 
-                    <i class="fas fa-camera-retro"></i>
-                </button>
+                <i class="fas fa-font"  title="Text" @click.stop="setNoteType('noteTxt')"></i>
+                <i class="fas fa-camera-retro" title="Image" @click.stop="setNoteType('noteImg')"></i>
+                <i class="fab fa-youtube" @click.stop="setNoteType('noteVideo')"></i>
+                <i class="fas fa-list-ul" @click.stop="setNoteType('noteTodos')"></i>
             </div>
         </div>
 </section>
@@ -28,6 +27,8 @@ export default {
                 noteTxt: 'write something...',
                 noteImg: 'Upload an image url...',
                 noteTodos: 'Write here a todo list...',
+                noteVideo: 'upload a video url...',
+
             }
         }
     },
@@ -57,6 +58,7 @@ export default {
         noteTxt,
         noteImg,
         noteTodos,
+        noteVideo,
         noteNavEdit,
     }
 }

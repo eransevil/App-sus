@@ -6,7 +6,7 @@ import keepAddNote from "../cmps/keep-add-note.cmp.js"
 export default {
     name: "keep-app",
     template: `
-        <section v-if="keeps" class="keep-app main-app">
+        <section v-if="keeps" class="keep-app ">
             <main>
                 <keep-add-note class="add-notes"/>
                 <keep-list :keeps="keepsToShow" @deleteNote="deleteNote" @changeColor="changeBgc"/>

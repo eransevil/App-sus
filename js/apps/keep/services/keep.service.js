@@ -12,7 +12,7 @@ const gKeeps = [{
             txt: "Notes Me!"
         },
         style: {
-            backgroundColor: "#ffab73"
+            backgroundColor: "#28527a"
         }
     },
     {
@@ -23,7 +23,7 @@ const gKeeps = [{
             title: " my image"
         },
         style: {
-            backgroundColor: "#ffd384"
+            backgroundColor: "#f4d160"
         }
     },
     {
@@ -41,7 +41,61 @@ const gKeeps = [{
         style: {
             backgroundColor: "#fff9b0"
         }
-    }
+    },
+    {
+        id: utilService.makeId(),
+        type: "noteImg",
+        info: {
+            url: "./img/coffe.jpg",
+            title: " don't forget to drink coffee"
+        },
+        style: {
+            backgroundColor: "#ff9a9a"
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "noteTodos",
+        info: {
+            title: 'before Summer',
+            label: "How was it:",
+            todos: [
+                { txt: "sport", doneAt: null },
+                { txt: "Toning", doneAt: null },
+                { txt: "eat right", doneAt: 187111111 }
+            ]
+        },
+        style: {
+            backgroundColor: "#b4dbed"
+        }
+    },
+
+    {
+
+        id: utilService.makeId(),
+        type: "noteTxt",
+        isPinned: true,
+        info: {
+            txt: "call mom!"
+        },
+        style: {
+            backgroundColor: "#28527a"
+        }
+    },
+
+    {
+        id: utilService.makeId(),
+        type: "noteVideo",
+        info: {
+            url: "https://www.youtube.com/watch?v=L0MK7qz13bU",
+            title: " Let it go"
+        },
+        style: {
+            backgroundColor: "#ff9a9a"
+        }
+    },
+
+
 ]
 
 
@@ -88,13 +142,23 @@ function getById(id) {
 function getEmptyNote(type) {
     const newNote = {
         type: type,
+        style: {
+            backgroundColor: "#f2d5f3"
+        },
         id: utilService.makeId(),
     };
     switch (type) {
         case 'noteTxt':
             newNote.info = { txt: '' };
             break;
+        case 'noteTodos':
+            newNote.info = { txt: '', todos: {} };
+            break;
         case 'noteImg':
+            newNote.info = { url: '', title: '' };
+            break;
+
+        case 'noteVideo':
             newNote.info = { url: '', title: '' };
             break;
     }
@@ -111,6 +175,9 @@ function addNewNote(newNote) {
             break;
         case 'noteTxt':
             newNote.info.txt = newNote.info.txt;
+            break;
+        case 'noteVideo':
+            newNote.info.url = newNote.info.txt;
             newNote.info.title = 'title';
             break;
 

@@ -9,7 +9,6 @@ export default {
 
             <template v-else class= "note-edit-container">
             <input ref="title" class="title" type="text" v-model="info.title" @keyup.enter="saveEdit">
-            <textarea name="" v-model="info.txt" cols="20" rows="10" @keyup.enter="saveEdit"></textarea>
             </template>
         </section>
         `,
