@@ -88,6 +88,8 @@ section {
   
   .scroll-container{
     max-width:  950px;
+    min-width: unset;
+
   }
 
   .main-app{
