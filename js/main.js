@@ -12,19 +12,13 @@ const options = {
             <!-- <user-msg /> -->
             <router-view />
             <app-footer/>
-<<<<<<< HEAD
            
-=======
->>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38
         </section>
     `,
     components: {
         appHeader,
         appFooter
-<<<<<<< HEAD
-=======
 
->>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38
     }
 }
 

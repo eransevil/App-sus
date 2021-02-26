@@ -1,18 +1,10 @@
 .container-app {
-<<<<<<< HEAD
     width: 100%;
     background-image: linear-gradient(to bottom, rgba(216, 227, 238, 0.295), rgba(229, 238, 247, 0.356)), url("../../img/img.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-=======
-    /* background-image: url("../../img/bgc.jpg"); */
-    background-attachment: fixed;
-    background-size: cover;
-    z-index: -1;
-    background-color: rgb(228, 231, 231);
->>>>>>> 6a49a2a2f15b5b5df4b88df969364f16fbfcfd38
 }
 
 h1.header-app {
@@ -24,4 +16,5 @@ h1.header-app {
     color: rgb(25 42 64);
     opacity: 0.9;
     text-align: center;
+    word-wrap: break-word;
 }
