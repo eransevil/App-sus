@@ -65,7 +65,6 @@
 }
 
 .search-book .search-input {
-   
     background-color: #e3edf7;
     padding: 16px 32px;
     border: none;
@@ -75,6 +74,7 @@
     color: #35373a;
     -webkit-appearance: none;
     transition: all 240ms ease-out;
+
 }
 
 

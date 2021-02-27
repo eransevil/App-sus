@@ -131,8 +131,8 @@ image {
 }
 
 .book-img {
-    height: 150px;
-    width: 120px;
+    height: 230px;
+    width: 210px;
     margin-top: 10px;
     border: 2px solid rgb(211, 210, 190);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -166,13 +166,14 @@ image {
 
 .open-preview-btn {
     cursor: pointer;
+    font-size: 20px;
     text-decoration: none;
-    color: rgb(225, 235, 183);
+    color: rgb(253, 253, 253);
 }
 
 .open-preview-btn:hover {
     text-decoration: underline;
-    color: rgb(225, 235, 183);
+    color: rgb(247, 250, 231);
 
 }
 
