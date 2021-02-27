@@ -1,12 +1,17 @@
 .note-nav-edit {
-    font-size: 0.8em;
     position: absolute;
-    right: 40px;
+    right: 84px;
     bottom: 2px;
 }
 
 .note-nav-edit i {
-    opacity: 0.8;
+    opacity: 0.4;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.note-nav-edit i:hover {
+    opacity: 1;
 }
 
 button.bgc {

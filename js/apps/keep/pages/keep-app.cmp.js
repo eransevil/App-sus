@@ -1,7 +1,7 @@
 import { keepService } from '../services/keep.service.js'
 import keepList from '../cmps/keep-list.cmp.js'
 import keepAddNote from "../cmps/keep-add-note.cmp.js"
-import {eventBus} from '../../../service/event-bus.service.js';
+import { eventBus } from '../../../service/event-bus.service.js';
 
 
 export default {
@@ -9,7 +9,7 @@ export default {
     template: `
         <section v-if="keeps" class="keep-app ">
             <main>
-                <keep-add-note class="add-notes"/>
+                <keep-add-note class="add-notes" @keyup.enter.prevent="change"/>
                 <keep-list :keeps="keepsToShow" @deleteNote="deleteNote" @changeColor="changeBgc"/>
 
             </main>
@@ -19,7 +19,6 @@ export default {
     data() {
         return {
             keeps: null,
-            filterBy: null,
         }
     },
     methods: {
@@ -41,24 +40,22 @@ export default {
                 })
 
         },
-        addEmail(email){
+        addEmail(email) {
             keepService.makeToNote(email)
             this.loadKeeps();
 
+        },
+        change() {
+            this.loadKeeps();
         }
 
     },
 
     computed: {
         keepsToShow() {
-            if (!this.filterBy) return this.keeps;
-            // var { byName } = this.filterBy
-            // byName = byName.toLowerCase();
-            // const booksToShow = this.books.filter(({ title, listPrice }) => {
-            //     return (title.toLowerCase().includes(byName)) && (listPrice.amount > this.filterBy.fromPrice) && (listPrice.amount < this.filterBy.toPrice)
-            // })
-            // return booksToShow;
-        }
+            return this.keeps;
+        },
+
     },
 
     created() {
@@ -66,7 +63,7 @@ export default {
 
         this.loadKeeps();
     },
-    
+
     components: {
         keepList,
         keepAddNote

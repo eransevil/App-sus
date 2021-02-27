@@ -15,9 +15,6 @@ export default {
             <li v-for="(todo, idx) in this.info.todos" :class="{marked: todo.doneAt}"  :key="todo.id">
                 <input type="text" v-model="todo.txt">
             </li>
-            <li v-for="(todo, idx) in this.info.todos" :class="{marked: todo.doneAt}"  :key="todo.id">
-                <input type="text" v-model="todo.txt">
-            </li>
             </template>
         </section>
         `,

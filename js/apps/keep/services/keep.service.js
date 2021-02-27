@@ -123,7 +123,7 @@ function makeToNote(email) {
         style: {
             backgroundColor: "#28527a"
         },
-        emailId:email.id
+        emailId: email.id
     }
 
     gKeeps.unshift(note);
@@ -174,7 +174,7 @@ function getEmptyNote(type) {
             newNote.info = { txt: '' };
             break;
         case 'noteTodos':
-            newNote.info = { txt: '', todos: {} };
+            newNote.info = { info: '', title: '' };
             break;
         case 'noteImg':
             newNote.info = { url: '', title: '' };
@@ -184,6 +184,7 @@ function getEmptyNote(type) {
             newNote.info = { url: '', title: '' };
             break;
     }
+
     return newNote;
 }
 
@@ -197,11 +198,11 @@ function addNewNote(newNote) {
         case 'noteTxt':
             newNote.info.txt = newNote.info.txt;
             break;
-        case 'noteVideo':
+
+        case 'noteTodos':
             newNote.info.url = newNote.info.txt;
             newNote.info.title = 'title';
             break;
-
     }
     gKeeps.unshift(newNote);
     utilService.saveToStorage(KEEPS_KEY, gKeeps);

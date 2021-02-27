@@ -1,7 +1,7 @@
 export default {
     template: `
    <header class="app-header page__menu menu flex align-center space-between">
-   <router-link class=" appsus-link" to="/" exact><h1> App Sus </h1> </router-link>
+   <router-link class=" appsus-link" to="/" exact><h1> App <i class="fas fa-horse-head"></i> </h1> </router-link>
         <nav class="nav-bar">
         <div class="links">
           <router-link class="link keep-link" to="/keep"> Keep</router-link> 
@@ -21,4 +21,4 @@ export default {
     destroyed() {
         document.body.classList.remove('menu-open');
     }
-} 
+}
