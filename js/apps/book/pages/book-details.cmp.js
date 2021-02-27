@@ -6,7 +6,7 @@ import formReview from '../cmps/form-review.cmp.js';
 
 export default {
   template: `
-    <section v-if="book" class="book-details-container">
+    <section v-if="book" class="book-details-container main-app">
       <router-link class="x-btn" :to="'/book/'"> ✖</router-link>
     <div class="book-details"> 
       <div class="book-info"> 

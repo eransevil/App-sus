@@ -118,7 +118,7 @@ function makeToNote(email) {
         type: "noteTxt",
         isPinned: true,
         info: {
-            txt: `Email from: ${email.sender} ` + email.subject + ' - ' +  email.body.substring(0,20) +'...' 
+            txt: `Email from: ${email.sender} `
         },
         style: {
             backgroundColor: "#28527a"

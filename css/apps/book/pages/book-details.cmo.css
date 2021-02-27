@@ -12,7 +12,7 @@
 
 .book-preview-container {
     background-color: rgb(170, 180, 179);
-    width: 250px;
+    width: 270px;
     height: 450px;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    /* margin: 10px; */
     width: 100%;
     padding: 20px;
 }
@@ -88,13 +88,14 @@
 }
 
 .title {
-    font-size: 1.15rem;
+    font-size: 20px;
     font-weight: bold;
     color: rgb(75, 88, 3);
     padding: 4px;
 }
 
 .price {
+    font-size: 16px;
     font-weight: bold;
     font-style: italic;
     padding: 2px;
