@@ -10,9 +10,12 @@ export default {
         <p class="email-subject"> {{email.subject}}</p>
         <p  class="email-subtitle-container"> <span class="email-sender"> {{email.sender}}</span> <span class="email-adress"> {{email.senderAdress}}</span> <span class="email-date"> {{convertDate}} </span> </p>
         <p class="email-body" >{{email.body}}</p>
+        <div class="Integration-btn"> 
         <button class="reply-btn"  @click.prevent="Reply">Reply</button>
-        <button class="reply-btn save-as-note-btn" @click.prevent="saveInNote(email)">Save As Note</button>
+        <button class="save-as-note reply-btn" @click.prevent="saveInNote(email)">Save As Note</button>
+        </div>
         </div>       
+
           
       </section>
       `,
@@ -47,8 +50,7 @@ export default {
       date = date[1] + '-' + date[2] + '-' + date[0];
       return date;
     },
-  },
-
+  }, 
   created() {
     this.loadEmail();
   },
