@@ -16,10 +16,12 @@ export default {
             this.$emit('deleteNote', keepId)
         },
         newBgc(colorObj) {
-            console.log('here?');
             this.$emit('changeColor', colorObj)
-        }
+        },
+      
     },
+
+    
     components: {
         keepPreview
     }

@@ -20,7 +20,6 @@ export default {
     },
     methods: {
       setFilter() {
-        console.log(this.filterBy)
         this.$emit('filtered', { ...this.filterBy });
       },
       toSearchPage(){

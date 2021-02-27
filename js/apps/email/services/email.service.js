@@ -217,24 +217,3 @@ function remove(id) {
   return storageService.remove(EMAILS_KEY, id);
 }
 
-// function filterBy(value) {
-//   ret storageService.query(EMAILS_KEY).then((emails) => {
-//     console.log(value)
-//     if(value==='inbox'){
-//       return emails.filter((email) =>{
-//         return email.type === 'inbox'
-//       } )
-//     }
-//     else if(value === 'sent'){
-//       return emails.filter((email) =>{
-//         return email.type === 'sent'
-//       } )
-//     }
-//     else{
-//       return emails.filter((email) =>{
-//         return email.starred === true
-//       } )
-//     }
-
-//   });
-// }

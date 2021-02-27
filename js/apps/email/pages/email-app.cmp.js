@@ -41,7 +41,6 @@ export default {
     },
     selectEmail(email) {
 
-       console.log(email)
         this.selectedEmail = email;
       },
       toggleStar(starId){
@@ -54,7 +53,6 @@ export default {
           })
       },
       removeEmail(emailId){
-        console.log()
         emailService.remove(emailId).then(()=>{
           this.loadEmails()
 
@@ -68,7 +66,6 @@ export default {
           })
       },
       markAsUnRead(id){
-        console.log(id)
         emailService.getById(id)
           .then((email)=>{
             email.isRead = false;

@@ -5,12 +5,16 @@ import noteTodos from './note-todos.cmp.js'
 import noteNavEdit from './note-nav-edit.cmp.js'
 import { keepService } from '../services/keep.service.js'
 
+
+
+
+
 export default {
     props: ['keep'],
     template: `
     <section  class="keep-preview" :style="keep.style">
-        <div>
-            <component :is="keep.type" :info="keep.info" :edit="isEdit" key="keep.id" @editSrc="onEditSrc" @editTxt="onEditTxt"></component>
+        <div >
+            <component @click.native="goToEmail(keep)" :is="keep.type" :info="keep.info" :edit="isEdit" key="keep.id" @editSrc="onEditSrc" @editTxt="onEditTxt"></component>
         </div>
         <note-nav-edit  @deleteNote="deleteNote" @edit="editNote" @setBgC="newBgC"/>
     </section>
@@ -22,7 +26,6 @@ export default {
     },
     methods: {
         deleteNote() {
-            console.log('this.keep.id:', this.keep.id)
             this.$emit('deleteNote', this.keep.id);
         },
         editNote() {
@@ -30,12 +33,10 @@ export default {
             this.$emit('edit', this.keep);
         },
         newBgC(color) {
-            console.log(color)
             const setColor = {
                 color,
                 id: this.keep.id
             }
-            console.log(setColor)
 
             this.$emit('changeBgc', setColor);
         },
@@ -49,6 +50,11 @@ export default {
             this.isEdit = isDone;
             this.keep.info.url = newUrl;
             keepService.updateNoteProp(this.keep.id, '[info][url]', newUrl);
+        },
+        goToEmail(keep){
+            if(!keep.emailId) return
+            this.$router.push(`/email/${keep.emailId}`);
+        
         }
 
     },

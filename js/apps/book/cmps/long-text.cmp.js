@@ -12,7 +12,6 @@ export default {
     },
     computed:{
         showTxt(){
-            console.log(this.txt)
             const rest =  this.txt.substr(100,this.txt.length-1) 
             return rest; 
         }

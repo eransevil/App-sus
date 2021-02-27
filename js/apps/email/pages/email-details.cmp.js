@@ -1,5 +1,5 @@
 import { emailService } from '../services/email.service.js';
-import { eventBus } from '../services/event-bus.service.js';
+import { eventBus } from '../../../service/event-bus.service.js';
 
 export default {
   name: 'emailDetails',
@@ -11,6 +11,7 @@ export default {
         <p  class="email-subtitle-container"> <span class="email-sender"> {{email.sender}}</span> <span class="email-adress"> {{email.senderAdress}}</span> <span class="email-date"> {{convertDate}} </span> </p>
         <p class="email-body" >{{email.body}}</p>
         <button class="reply-btn"  @click.prevent="Reply">Reply</button>
+        <button class="reply-btn save-as-note-btn" @click.prevent="saveInNote(email)">Save As Note</button>
         </div>       
           
       </section>
@@ -28,12 +29,15 @@ export default {
         this.email = email;
       });
     },
-    toggleStar() {
-      console.log(this.email);
-    },
+
     Reply() {
       this.$router.push(`/email/compose`)
     },
+    saveInNote(email){
+      eventBus.$emit('saveNote' ,email)
+      this.$router.push(`/keep/`);
+
+    }
   },
 
   computed:{
@@ -50,7 +54,6 @@ export default {
   },
   watch: {
     '$route.params.id'(id) {
-      console.log(id);
       this.loadEmail();
     },
   },

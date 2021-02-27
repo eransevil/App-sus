@@ -35,10 +35,8 @@ export default {
     methods: {
 
         setNoteType(type) {
-            console.log('type', type);
             this.noteType = type;
             this.newNote = keepService.getEmptyNote(this.noteType)
-            console.log('this.newNote:', this.newNote)
         },
         addNewNote(newNote) {
             keepService.addNewNote(newNote);

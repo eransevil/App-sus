@@ -106,9 +106,32 @@ export const keepService = {
     getById,
     getEmptyNote,
     addNewNote,
-    updateNoteProp
+    updateNoteProp,
+    makeToNote
 
 }
+
+
+function makeToNote(email) {
+    const note = {
+        id: utilService.makeId(),
+        type: "noteTxt",
+        isPinned: true,
+        info: {
+            txt: `Email from: ${email.sender} ` + email.subject + ' - ' +  email.body.substring(0,20) +'...' 
+        },
+        style: {
+            backgroundColor: "#28527a"
+        },
+        emailId:email.id
+    }
+
+    gKeeps.unshift(note);
+    utilService.saveToStorage(KEEPS_KEY, gKeeps);
+
+
+}
+
 
 function query() {
     return storageService.query(KEEPS_KEY)
@@ -117,7 +140,6 @@ function query() {
                 keeps = gKeeps;
                 utilService.saveToStorage(KEEPS_KEY, gKeeps);
             }
-            console.log(keeps, 'keeps');
 
             return keeps;
         });
@@ -166,7 +188,6 @@ function getEmptyNote(type) {
 }
 
 function addNewNote(newNote) {
-    console.log('newNote:', newNote)
 
     switch (newNote.type) {
         case 'noteImg':

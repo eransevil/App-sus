@@ -32,7 +32,6 @@ export default {
       this.filterBy = filterBy;
     },
     postBook(book) {
-      console.log(book)
     },
   },
   computed: {

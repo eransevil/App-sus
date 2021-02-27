@@ -13,6 +13,7 @@ export default {
         <p class="email-pre-container"> <span class="email-subject"> {{email.subject}} </span> <span class="body-introduction">{{introduction}}</span></p>
         <p class="email-date"> {{convertDate}}</p>
         <div @click="markAsRead(email.id) " class="email-preview-container">  
+        
         </div> 
     </section>
     `,

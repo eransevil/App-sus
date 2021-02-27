@@ -33,7 +33,6 @@ export default {
          
         },
         addToList(book){
-            console.log(book)
             bookService.save(book)
             .then(() =>{
                 const msg = {

@@ -49,7 +49,6 @@ export default {
     },
     openReviews() {
       this.showReviews = !this.showReviews;
-      console.log(this.showReviews);
     },
     toggleReviewForm() {
       this.addReview = !this.addReview;
@@ -65,12 +64,10 @@ export default {
     loadBook() {
       const id = this.$route.params.bookId;
       bookService.getById(id).then((book) => {
-        console.log(book);
         this.book = book;
       });
     },
     getNextBook(book, value) {
-      console.log(book.id);
       this.nextBookId = bookService.getNextBookId(book.id, value);
       this.$router.push(`/book/${this.nextBookId}`);
     },

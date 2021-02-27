@@ -36,7 +36,6 @@ export default {
             timer: 1200,
           });
           this.seeMsg(email.id);
-          console.log(email);
         })
         .catch((err) => {
           Swal.fire({

@@ -1,6 +1,7 @@
 import { keepService } from '../services/keep.service.js'
 import keepList from '../cmps/keep-list.cmp.js'
 import keepAddNote from "../cmps/keep-add-note.cmp.js"
+import {eventBus} from '../../../service/event-bus.service.js';
 
 
 export default {
@@ -32,15 +33,17 @@ export default {
         },
 
         changeBgc(colorObj) {
-            console.log('colorObj:', colorObj)
-            console.log(colorObj.id)
             keepService.getById(colorObj.id)
                 .then((keep) => {
                     keep.style.backgroundColor = colorObj.color
-                    console.log('neׁwkeep:', keep)
                     keepService.saveNote(keep)
                         .then(this.loadKeeps)
                 })
+
+        },
+        addEmail(email){
+            keepService.makeToNote(email)
+            this.loadKeeps();
 
         }
 
@@ -59,8 +62,11 @@ export default {
     },
 
     created() {
+        eventBus.$on('saveNote', this.addEmail)
+
         this.loadKeeps();
     },
+    
     components: {
         keepList,
         keepAddNote

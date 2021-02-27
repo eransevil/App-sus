@@ -16,7 +16,6 @@ export default {
     `,
   methods: {
     toggleStar(emailId) {
-      console.log(emailId);
       this.$emit('starredToggle', emailId);
     },
     showDeleteModal(emailId) {
@@ -30,18 +29,15 @@ export default {
         confirmButtonText: 'Yes, delete it!',
       }).then((result) => {
         if (result.isConfirmed) {
-          console.log(emailId);
           this.$emit('deleteEmail', emailId);
           Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
         }
       });
     },
     mark(id) {
-      console.log(id);
       this.$emit('markRead', id);
     },
     MarkUnRead(id) {
-      console.log(id);
       this.$emit('UnRead', id);
     },
 
