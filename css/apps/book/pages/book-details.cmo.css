@@ -162,6 +162,7 @@ image {
 .delete-btn {
     border: none;
     font-weight: bold;
+    background-color: rgba(220, 218, 231, 0.424);
 }
 
 .open-preview-btn {
