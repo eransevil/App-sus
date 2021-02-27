@@ -1,4 +1,4 @@
-import { eventBus } from "../../../event-bus.service.js"
+import { eventBus } from "../../../service/event-bus.service.js"
 
 export default {
     template: `

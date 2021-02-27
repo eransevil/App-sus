@@ -1,6 +1,6 @@
 import {serviceSearch} from '../services/search-book.service.js'
 import { bookService } from '../services/book.service.js';
-import {eventBus} from '../../../event-bus.service.js';
+import {eventBus} from '../../../service/event-bus.service.js';
 
 export default {
     template:`

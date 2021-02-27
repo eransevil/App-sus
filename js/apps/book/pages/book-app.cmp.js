@@ -1,7 +1,7 @@
 import { bookService } from '../services/book.service.js';
 import bookFilter from '../cmps/book-filter.cmp.js';
 import bookList from '../cmps/book-list.cmp.js';
-import { eventBus } from '../../../event-bus.service.js';
+import { eventBus } from '../../../service/event-bus.service.js';
 
 export default {
   template: `
