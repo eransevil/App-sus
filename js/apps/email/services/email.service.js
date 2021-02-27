@@ -54,7 +54,7 @@ const gEmailsDB = [
   {
     id: utilService.makeId(),
     subject: 'Don’t miss out, eran!',
-    sender: 'me ',
+    sender: 'me',
     senderAdress: 'eransevil@gmail.com',
     body:
       'f you do not wish to receive further communications like this, please click here to unsubscribe. Alternatively, you can change your Notification Preferences in My eBay by clicking here. Please note that it may take up to 10 days to process your request.',
@@ -78,7 +78,7 @@ const gEmailsDB = [
   {
     id: utilService.makeId(),
     subject: '[Live Webinar] AI 101 for Developers',
-    sender: 'Clarifai Team ',
+    sender: 'Clarifai',
     senderAdress: 'no-reply@clarifai.com',
     body:
       'This webinar is a simplified, yet comprehensive overview to ground you as you explore computer vision, NLP, and AI. Whether youre beginning your journey with AI as a developer or product innovator or simply want a refresher on foundational AI concepts, this webinar is for you',
@@ -115,7 +115,7 @@ const gEmailsDB = [
   {
     id: utilService.makeId(),
     subject: 'verify your account',
-    sender: 'microsoft ',
+    sender: 'Microsoft ',
     senderAdress: 'noreply@microsoft.com',
     body:
       'Our whole crew is always requires further verification because we did not recognize your device. To complete the sign in, enter the verification code on the unrecognized device.',
@@ -127,7 +127,7 @@ const gEmailsDB = [
   {
     id: utilService.makeId(),
     subject: 'Upgrade Your Learning Experience!',
-    sender: 'GeeksforGeeks  ',
+    sender: 'Geeks',
     senderAdress: 'o-reply@geeksforgeeks.org',
     body:
       'Hey Geek,Choose Knowledge. Choose Inspiration. Choose Success.Choose GeeksforGeeks Premium.Why Go Premium? So that you can get access to:Ad-free Content for zero interruptionsAdditional discounts on our coursesDiscussion Forum with Industry Expert',

@@ -4,7 +4,7 @@ export default {
       <section class="reviews-container"> 
           <div class="review" v-for="(review,idx) in reviews" :key="idx"> 
               <button class="delete-btn"  @click="deletereview(idx)"> ✖ </button>   
-                <span> name: {{ review.name }} </span>  <span> rate: {{review.rate}}  </span> <span> {{review.review}}  </span> 
+                <span class="review-info"> {{ review.name }} </span>  <span class="review-info"> {{review.rate}}  </span> <span lass="review-info"> {{review.review}}  </span> 
               </div>
     
           </section>
