@@ -19,8 +19,6 @@ export default {
   data() {
     return {
       email: null,
-      nextEmailId: null,
-      previousEmailId: null,
     };
   },
   methods: {
@@ -28,8 +26,6 @@ export default {
       const id = this.$route.params.id;
       emailService.getById(id).then((email) => {
         this.email = email;
-        //  this.nextBookId = bookService.getNextBookId(book.id)
-        //  this.PreviousBookId = bookService.getPreviousBookId(book.id)
       });
     },
     toggleStar() {

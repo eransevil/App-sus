@@ -1,10 +1,13 @@
-// import bookApp from './pages/book-app.cmp.js'
 import homePage from './pages/home-page.cmp.js';
-import bookApp from './apps/book/pages/book-app.cmp.js';
 import keepApp from './apps/keep/pages/keep-app.cmp.js';
 import emailApp from './apps/email/pages/email-app.cmp.js';
 import emailDetails from './apps/email/pages/email-details.cmp.js';
 import emailCompose from './apps/email/pages/email-compose.cmp.js';
+import bookApp from './apps/book/pages/book-app.cmp.js';
+import bookDetails from './apps/book/pages/book-details.cmp.js'
+import searchBook from './apps/book/pages/search-book.cmp.js'
+
+
 
 const routes = [
   {
@@ -31,6 +34,18 @@ const routes = [
     path: '/email/:id',
     component: emailDetails,
   },
+  {
+    path:'/book',
+    component:bookApp
+},
+{
+    path:'/book/:bookId',
+    component:bookDetails
+},
+{
+    path:'/searchBook',
+    component:searchBook
+}
 
 ];
 
