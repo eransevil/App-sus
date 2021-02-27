@@ -6,7 +6,7 @@ export default {
           <input type="number" @input="setFilter" placeholder="Min Price" v-model.number="filterBy.fromPrice">
           <input type="number" @input="setFilter" placeholder="Max Price" v-model.number="filterBy.toPrice">
         </section>
-        <div class="to-search-btn" @click="toSearchPage"> Click here for searching a specific book on web</div>
+        <div title="Go to search page" class="to-search-btn" @click="toSearchPage"> Click here for searching a specific book on web</div>
         </section>
       `,
     data() {
